@@ -1092,6 +1092,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1202145235844766869, guid: bec130511824a1f4da2764d8d606bc51,
+        type: 3}
+      propertyPath: _playerPrefab.RawGuidValue.Array.data[0]
+      value: 1453205571692450284
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202145235844766869, guid: bec130511824a1f4da2764d8d606bc51,
+        type: 3}
+      propertyPath: _playerPrefab.RawGuidValue.Array.data[1]
+      value: -4904942254443702408
+      objectReference: {fileID: 0}
     - target: {fileID: 3274937675791130170, guid: bec130511824a1f4da2764d8d606bc51,
         type: 3}
       propertyPath: m_Name
