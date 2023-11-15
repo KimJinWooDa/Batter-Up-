@@ -870,6 +870,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 108bea7e27d690a4188362cb10c38d61,
         type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 108bea7e27d690a4188362cb10c38d61,
+        type: 3}
       propertyPath: m_TagString
       value: Bat
       objectReference: {fileID: 0}
@@ -1470,9 +1475,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 1
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &860860707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2637,9 +2642,9 @@ Rigidbody:
   m_ImplicitTensor: 1
   m_UseGravity: 0
   m_IsKinematic: 1
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 2
 --- !u!114 &1829367308
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3002,6 +3007,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HitBall
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121694254855644093, guid: 8adf1bfeb461fec448380f92326e2c16,
+        type: 3}
+      propertyPath: m_Mass
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121694254855644093, guid: 8adf1bfeb461fec448380f92326e2c16,
+        type: 3}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5121694254855644093, guid: 8adf1bfeb461fec448380f92326e2c16,
+        type: 3}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6294432978332029112, guid: 8adf1bfeb461fec448380f92326e2c16,
+        type: 3}
+      propertyPath: power
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
