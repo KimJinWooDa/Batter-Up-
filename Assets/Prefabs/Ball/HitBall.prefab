@@ -262,9 +262,9 @@ GameObject:
   - component: {fileID: 373500849416300272}
   - component: {fileID: 59724826130510035}
   - component: {fileID: 5121694254855644093}
-  - component: {fileID: 6150427430429492793}
   - component: {fileID: 1338071886656626791}
   - component: {fileID: 528914282241494307}
+  - component: {fileID: 6294432978332029112}
   m_Layer: 6
   m_Name: HitBall
   m_TagString: Untagged
@@ -321,7 +321,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 0eb3e82d4ff188541909a17bb715f815, type: 2}
+  - {fileID: 2100000, guid: 350f7b22675e84b6f9f58fd31ff7c42e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -372,7 +372,7 @@ Rigidbody:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4819000890490647882}
   serializedVersion: 4
-  m_Mass: 6
+  m_Mass: 5
   m_Drag: 0
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
@@ -391,21 +391,6 @@ Rigidbody:
   m_Interpolate: 2
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &6150427430429492793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4819000890490647882}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 55f7ef963701eed4ca84937564755f92, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  power: 0.0015
-  AudioSource: {fileID: 1338071886656626791}
-  SingleHapticTest: {fileID: 528914282241494307}
 --- !u!82 &1338071886656626791
 AudioSource:
   m_ObjectHideFlags: 0
@@ -418,7 +403,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b722d1df7a7b8974fb138b4deeaad37e, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.486
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -517,6 +502,21 @@ MonoBehaviour:
   clip: {fileID: 2460798210113038985, guid: b3cc2f0c33a48764a8616df338f21949, type: 3}
   LeftHapticControl: 0
   RightHapticControl: 1
+--- !u!114 &6294432978332029112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4819000890490647882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55f7ef963701eed4ca84937564755f92, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  power: 1
+  AudioSource: {fileID: 1338071886656626791}
+  SingleHapticTest: {fileID: 528914282241494307}
 --- !u!1 &5067824574724630544
 GameObject:
   m_ObjectHideFlags: 0
