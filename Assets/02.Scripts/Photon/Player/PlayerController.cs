@@ -65,7 +65,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     }
 
     /// <summary>
-    /// Gets the player input data.
+    /// Get the player input data.
     /// </summary>
     /// <returns>Returns the player input data.</returns>
     public PlayerData GetPlayerNetworkInput()
