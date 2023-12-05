@@ -17,10 +17,10 @@ TagManager:
   - UI
   - Physics
   - Prop
-  - 
-  - 
-  - 
-  - 
+  - Grabbing
+  - Grabbable
+  - Hand
+  - HandPlayer
   - 
   - 
   - 

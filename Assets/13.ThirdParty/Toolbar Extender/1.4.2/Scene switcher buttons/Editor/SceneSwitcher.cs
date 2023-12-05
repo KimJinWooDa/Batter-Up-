@@ -96,7 +96,7 @@ namespace UnityToolbarExtender.Examples
             var saved = EditorSceneManager.SaveCurrentModifiedScenesIfUserWantsTo();
             if (saved)
             {
-                _ = EditorSceneManager.OpenScene($"Assets/Scenes/{name}.unity");
+                _ = EditorSceneManager.OpenScene($"Assets/01.Scenes/{name}.unity");
             }
         }
     }

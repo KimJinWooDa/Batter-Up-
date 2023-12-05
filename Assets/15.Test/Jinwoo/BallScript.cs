@@ -30,7 +30,7 @@ public class BallScript : MonoBehaviour
                 float forceMagnitude = hitDirection.magnitude * rb.mass;
                 rb.AddForce(hitDirection.normalized * forceMagnitude * power, ForceMode.Impulse);
                 
-                AudioSource.Play();
+                //AudioSource.Play();
                 SingleHapticTest.PlayRightHapticClip();
             }
         }
