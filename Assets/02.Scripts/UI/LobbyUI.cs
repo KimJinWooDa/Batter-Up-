@@ -10,6 +10,7 @@ using UnityEngine.UI;
 using Fusion;
 
 
+[DisallowMultipleComponent]
 public class LobbyUI : MonoBehaviour
 {
     // Cached references
