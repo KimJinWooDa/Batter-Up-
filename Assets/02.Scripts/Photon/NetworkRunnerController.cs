@@ -16,70 +16,62 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
 {
     [SerializeField] private NetworkRunner networkRunnerPrefab;
 
-    [SerializeField] private NetworkPrefabRef _playerPrefab;
-    private Dictionary<PlayerRef, NetworkObject> _spawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
-
     // Cached references
     private NetworkRunner networkRunnerInstance;
 
+    // Constants
+    private const string GAME_SCENE_NAME = "MainGame";
+
     // Events
-    //public event Action OnStartedRunnerConnection;
-    //public event Action OnPlayerJoinedSuccessfully;
+    public event Action OnStartedRunnerConnection;
+    public event Action OnPlayerJoinedSuccessfully;
 
-    private NetworkRunner _runner;
 
-    private void OnGUI()
-    {
-        if (_runner == null)
-        {
-            if (GUI.Button(new Rect(0,0,200,40), "Host"))
-            {
-                StartGame(GameMode.Host, String.Empty);
-            }
-            if (GUI.Button(new Rect(0,40,200,40), "Join"))
-            {
-                StartGame(GameMode.Client, String.Empty);
-            }
-        }
-    }
-    
+    /// <summary>
+    /// Starts the game using the provided mode and room name.
+    /// </summary>
+    /// <param name="mode"></param>
+    /// <param name="roomName"></param>
     public async void StartGame(GameMode mode, string roomName)
     {
-        //OnStartedRunnerConnection?.Invoke();
-        
-         if (networkRunnerInstance == null)
-         {
-             networkRunnerInstance = Instantiate(networkRunnerPrefab);
-         }
-        
-         // Register so we will get the callbacks as well
-         networkRunnerInstance.AddCallbacks(this);
+        // Invoke event
+        OnStartedRunnerConnection?.Invoke();
+
+        // Check if we have an network runner instance, if not create one
+        if (networkRunnerInstance == null) networkRunnerInstance = Instantiate(networkRunnerPrefab);
+
+        // Register so we will get the callbacks as well
+        networkRunnerInstance.AddCallbacks(this);
 
         // ProvideInput means that that player is recording and sending inputs to the server.
         networkRunnerInstance.ProvideInput = true;
 
-         var startGameArgs = new StartGameArgs()
-         {
-             GameMode = mode,
-             SessionName = roomName,
-             PlayerCount = 2,
-             SceneManager = networkRunnerInstance.GetComponent<INetworkSceneManager>()
-             //SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>()
-         };
-        
-         var result = await networkRunnerInstance.StartGame(startGameArgs);
-         if (result.Ok)
-         {
-             const string SCENE_NAME = "MainGame";
-             networkRunnerInstance.SetActiveScene(SCENE_NAME);
-         }
-         else
-         {
-             Debug.LogError($"Failed to start: {result.ShutdownReason}");
-         }
-       
+        // Start the game with the provided arguments
+        var startGameArgs = new StartGameArgs()
+        {
+            GameMode = mode,
+            SessionName = roomName,
+            PlayerCount = 2,
+            SceneManager = networkRunnerInstance.GetComponent<INetworkSceneManager>()
+        };
+
+        // Get the result
+        var result = await networkRunnerInstance.StartGame(startGameArgs);
+
+        // Analyze the result
+        if (result.Ok)
+        {
+            networkRunnerInstance.SetActiveScene(GAME_SCENE_NAME);
+        }
+        else
+        {
+            Debug.LogError($"Failed to start: {result.ShutdownReason}");
+        }
     }
 
+    /// <summary>
+    /// Shuts down the runner.
+    /// </summary>
     public void ShutDownRunner()
     {
         networkRunnerInstance.Shutdown();
@@ -89,61 +81,19 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
-        if (runner == null)
-        {
-            Debug.LogError("OnPlayerJoined: runner is null");
-            return;
-        }
-        
-        //OnPlayerJoinedSuccessfully?.Invoke();
+        // Invoke event
+        OnPlayerJoinedSuccessfully?.Invoke();
 
-        Vector3 spawnPosition = new Vector3((player.RawEncoded % runner.Config.Simulation.DefaultPlayers) * 3, 1, 0);
-        
-        NetworkObject networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition, Quaternion.identity, player);
-        
-        _spawnedCharacters.Add(player, networkPlayerObject);
-        DontDestroyOnLoad(networkPlayerObject);
-        Debug.Log("OnPlayerJoined: Player spawned successfully");
+        Debug.Log("OnPlayerJoined");
     }
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
     {
-        if (_spawnedCharacters.TryGetValue(player, out NetworkObject networkObject))
-        {
-            runner.Despawn(networkObject);
-            _spawnedCharacters.Remove(player);
-        }
-        
         Debug.Log("OnPlayerLeft");
-    }
-
-    private bool _mouseButton0;
-    private void Update()
-    {
-        _mouseButton0 = _mouseButton0 | Input.GetMouseButton(0);
     }
 
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
-        var data = new NetworkInputData();
-
-        if (Input.GetKey(KeyCode.W))
-            data.direction += Vector3.forward;
-
-        if (Input.GetKey(KeyCode.S))
-            data.direction += Vector3.back;
-
-        if (Input.GetKey(KeyCode.A))
-            data.direction += Vector3.left;
-
-        if (Input.GetKey(KeyCode.D))
-            data.direction += Vector3.right;
-
-        if (_mouseButton0)
-            data.buttons |= NetworkInputData.MOUSEBUTTON1;
-        _mouseButton0 = false;
-
-        input.Set(data);
     }
 
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input)
