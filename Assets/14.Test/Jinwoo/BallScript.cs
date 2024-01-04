@@ -5,7 +5,7 @@ public class BallScript : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] private float power = 0.01f;
     [SerializeField] private AudioSource AudioSource;
-    [SerializeField] private SingleHapticTest SingleHapticTest;
+   // [SerializeField] private SingleHapticTest SingleHapticTest;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,7 +31,7 @@ public class BallScript : MonoBehaviour
                 rb.AddForce(hitDirection.normalized * forceMagnitude * power, ForceMode.Impulse);
                 
                 AudioSource.Play();
-                SingleHapticTest.PlayRightHapticClip();
+              //  SingleHapticTest.PlayRightHapticClip();
             }
         }
     }
