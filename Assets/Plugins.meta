@@ -1,8 +1,16 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: e502d145d04d2594988f9df2634857b9
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
+=======
+guid: 2b40bffff90bdd640bc777bf3afb5a2d
+folderAsset: yes
+timeCreated: 1487438718
+licenseType: Store
+DefaultImporter:
+>>>>>>> Dev_SoundSystem
   userData: 
   assetBundleName: 
   assetBundleVariant: 

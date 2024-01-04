@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 07c1c7f0c11a92b48b71a5e472947119
+=======
+guid: 435fe0376b6466e4688df0898a34a35f
+>>>>>>> Dev_SoundSystem
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

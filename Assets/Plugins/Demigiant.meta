@@ -1,5 +1,6 @@
 fileFormatVersion: 2
 guid: 9f80792dcd2829e41b1f075e7245ca5b
+<<<<<<< HEAD
 labels:
 - Tween
 - Tweening
@@ -21,3 +22,11 @@ labels:
 folderAsset: yes
 DefaultImporter:
   userData: 
+=======
+folderAsset: yes
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+>>>>>>> Dev_SoundSystem
