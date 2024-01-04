@@ -18,11 +18,7 @@
     "com.unity.xr.interaction.toolkit": "2.5.2",
     "com.unity.xr.management": "4.4.0",
     "com.unity.xr.oculus": "4.1.2",
-<<<<<<< HEAD
     "com.unity.xr.openxr": "1.9.1",
-=======
-    "com.unity.xr.openxr": "1.8.2",
->>>>>>> Dev_SoundSystem
     "com.veriorpies.parrelsync": "https://github.com/VeriorPies/ParrelSync.git?path=/ParrelSync",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
