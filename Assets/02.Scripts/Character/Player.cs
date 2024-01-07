@@ -26,7 +26,7 @@ public class Player : NetworkBehaviour
             if (data.direction.sqrMagnitude > 0)
                 _forward = data.direction;
 
-            if (delay.ExpiredOrNotRunning(Runner))
+            /*if (delay.ExpiredOrNotRunning(Runner))
             {
                 if ((data.buttons & NetworkInputData.MOUSEBUTTON1) != 0)
                 {
@@ -39,7 +39,7 @@ public class Player : NetworkBehaviour
                             o.GetComponent<Ball>().Init();
                         });
                 }
-            }
+            }*/
         }
     }
 }
