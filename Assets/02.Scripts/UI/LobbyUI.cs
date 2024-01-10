@@ -19,6 +19,19 @@ public class LobbyUI : MonoBehaviour
     [Header("Room Elements")]
     [SerializeField] private Button RandomJoinButton = null;
 
+    private void OnGUI()
+    {
+        int buttonWidth = 200;
+        int buttonHeight = 50;
+
+        int posX = Screen.width - buttonWidth - 10; 
+        int posY = 10; 
+
+        if (GUI.Button(new Rect(posX, posY, buttonWidth, buttonHeight), "Join Random Room"))
+        {
+            JoinRandomRoom();
+        }
+    }
 
     private void Start()
     {
