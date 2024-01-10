@@ -40,12 +40,13 @@ MonoBehaviour:
     - Oculus.Interaction.OVR
     - Oculus.Interaction.OVR.Samples
     - Oculus.VR
+    - SingularityGroup.HotReload.Runtime
+    - SingularityGroup.HotReload.Runtime.Public
     - UniTask
     - UniTask.Addressables
     - UniTask.DOTween
     - UniTask.Linq
     - UniTask.TextMeshPro
-    - VHierarchy
     - xr.sdk.sharedassets.runtime
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
