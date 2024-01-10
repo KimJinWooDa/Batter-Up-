@@ -3,7 +3,7 @@ using UnityEngine;
 public class Ball : MonoBehaviour, IHittable
 {
     public HapticData HapticData;
-    
+   
     public void PlaySound(Vector3 point, float volume)
     {
         SoundManager.Instance.PlaySound(soundName: "Ball", point, volume);
