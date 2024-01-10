@@ -191,7 +191,6 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4690782462345063719}
-  - {fileID: 2036127553164582146}
   SimulationBehaviours: []
 --- !u!114 &2036127553164582146
 MonoBehaviour:
@@ -205,4 +204,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb603ffd0e0ff444b89abd5c777c840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 0

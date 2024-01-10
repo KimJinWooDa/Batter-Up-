@@ -1,19 +1,16 @@
-using Fusion;
+using UnityEngine;
 
-public class Ball : NetworkBehaviour
+public class Ball : MonoBehaviour, IHittable
 {
-    [Networked] private TickTimer life { get; set; }
-
-    public void Init()
+    public HapticData HapticData;
+   
+    public void PlaySound(Vector3 point, float volume)
     {
-        life = TickTimer.CreateFromSeconds(Runner, 5.0f);
+        SoundManager.Instance.PlaySound(soundName: "Ball", point, volume);
     }
 
-    public override void FixedUpdateNetwork()
+    public void PlayHaptic(float volume)
     {
-        if(life.Expired(Runner))
-            Runner.Despawn(Object);
-        else
-            transform.position += 5 * transform.forward * Runner.DeltaTime;
+        HapticManager.Instance.PlayHaptic(HapticData, volume);
     }
 }
