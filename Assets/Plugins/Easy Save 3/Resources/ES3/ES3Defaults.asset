@@ -33,7 +33,7 @@ MonoBehaviour:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - AutoSet
-    - Fusion.Addressables
+    - Fusion.Unity
     - Meta.XR.BuildingBlocks
     - Oculus.Haptics
     - Oculus.Interaction

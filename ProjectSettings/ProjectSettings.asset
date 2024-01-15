@@ -819,7 +819,7 @@ PlayerSettings:
     PS4: UNITY_VISUAL_SCRIPTING
     QNX: UNITY_VISUAL_SCRIPTING
     Server: UNITY_VISUAL_SCRIPTING
-    Standalone: FUSION_WEAVER;UNITY_VISUAL_SCRIPTING;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1
+    Standalone: FUSION_WEAVER;UNITY_VISUAL_SCRIPTING;ODIN_INSPECTOR;ODIN_INSPECTOR_3;ODIN_INSPECTOR_3_1;FUSION2
     VisionOS: UNITY_VISUAL_SCRIPTING
     WebGL: UNITY_VISUAL_SCRIPTING
     Windows Store Apps: UNITY_VISUAL_SCRIPTING
@@ -849,7 +849,7 @@ PlayerSettings:
     tvOS: 1
   incrementalIl2cppBuild: {}
   suppressCommonWarnings: 1
-  allowUnsafeCode: 0
+  allowUnsafeCode: 1
   useDeterministicCompilation: 1
   additionalIl2CppArgs: 
   scriptingRuntimeVersion: 1

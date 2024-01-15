@@ -61,7 +61,7 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
         // Analyze the result
         if (result.Ok)
         {
-            networkRunnerInstance.SetActiveScene(GAME_SCENE_NAME);
+            await networkRunnerInstance.LoadScene(GAME_SCENE_NAME);
         }
         else
         {
@@ -161,6 +161,26 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
     public void OnSceneLoadStart(NetworkRunner runner)
     {
         Debug.Log("OnSceneLoadStart");
+    }
+
+    public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player)
+    {
+    }
+
+    public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player)
+    {
+    }
+
+    public void OnDisconnectedFromServer(NetworkRunner runner, NetDisconnectReason reason)
+    {
+    }
+
+    public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ArraySegment<byte> data)
+    {
+    }
+
+    public void OnReliableDataProgress(NetworkRunner runner, PlayerRef player, ReliableKey key, float progress)
+    {
     }
 
     #endregion

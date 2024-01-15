@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
 
-public class SoundManager : Singleton<SoundManager>
+public class SoundManager : MonoBehaviourSingleton<SoundManager>
 {
     [TabGroup("Tab","BGM", SdfIconType.FileMusic, TextColor = "orange")]
     [TabGroup("Tab","BGM")] [SerializeField] private AudioMixerGroup bgmAudioMixerGroup;

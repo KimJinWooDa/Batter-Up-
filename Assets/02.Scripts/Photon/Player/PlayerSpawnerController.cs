@@ -42,7 +42,7 @@ public class PlayerSpawnerController : NetworkBehaviour, IPlayerJoined, IPlayerL
         if (Runner.IsServer)
         {
             // Calculate the spawn point index
-            var index = (int)playerRef % spawnPointList.Count;
+            var index = playerRef.PlayerId % spawnPointList.Count;
 
             // Get the spawn point using the index
             var spawnPoint = spawnPointList[index].position;
@@ -64,7 +64,7 @@ public class PlayerSpawnerController : NetworkBehaviour, IPlayerJoined, IPlayerL
         // Check if we are the server
         if (Runner.IsServer)
         {
-            if(Runner.TryGetPlayerObject(playerRef, out var playerNetworkObject))
+            if (Runner.TryGetPlayerObject(playerRef, out var playerNetworkObject))
             {
                 // Despawn the player
                 Runner.Despawn(playerNetworkObject);

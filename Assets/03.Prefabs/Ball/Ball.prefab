@@ -152,22 +152,10 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 2
-  InterpolationSpace: 0
-  InterpolationTarget: {fileID: 606043225921466264}
-  InterpolateErrorCorrection: 1
-  InterpolatedErrorCorrectionSettings:
-    MinRate: 3.3
-    MaxRate: 10
-    PosBlendStart: 0.25
-    PosBlendEnd: 1
-    PosMinCorrection: 0.025
-    PosTeleportDistance: 2
-    RotBlendStart: 0.1
-    RotBlendEnd: 0.5
-    RotTeleportRadians: 1.5
-  UseLegacySharedModeInterpolation: 0
-  TargetInterpolationDelay: 0.03
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!114 &754156146844994321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -180,18 +168,12 @@ MonoBehaviour:
   m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SortKey: 1501130022
   ObjectInterest: 1
-  DefaultInterestGroups: []
-  DestroyWhenStateAuthorityLeaves: 0
-  AllowStateAuthorityOverride: 1
-  AoiPositionSource: {fileID: 0}
   Flags: 2305
-  NetworkGuid:
-    RawGuidValue: 91399ed548f92e14081cfdfc209de4b9
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4690782462345063719}
-  SimulationBehaviours: []
 --- !u!114 &2036127553164582146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,3 +186,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb603ffd0e0ff444b89abd5c777c840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HapticData: {fileID: 0}

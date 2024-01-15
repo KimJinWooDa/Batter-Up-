@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AudioSourcePool : Singleton<AudioSourcePool>
+public class AudioSourcePool : MonoBehaviourSingleton<AudioSourcePool>
 {
     [SerializeField] private Queue<GameObject> availableObjects = new Queue<GameObject>();
     [SerializeField] private List<GameObject> debugAvailableObjectsList;

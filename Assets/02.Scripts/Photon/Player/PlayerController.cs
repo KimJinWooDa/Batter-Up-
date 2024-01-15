@@ -20,7 +20,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     private float vertical = 0f;
 
     // Cached variables
-    private Rigidbody rigid = null;
+    private NetworkCharacterController networkCharacterController = null;
 
     // Constants
     private const string HORIZONTAL = "Horizontal";
@@ -33,7 +33,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     public override void Spawned()
     {
         // Cache
-        rigid = GetComponent<Rigidbody>();
+        networkCharacterController = GetComponent<NetworkCharacterController>();
     }
 
     /// <summary>
@@ -44,10 +44,10 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     public void BeforeUpdate()
     {
         // We are the local machine if this state is true
-        if (Runner.LocalPlayer.IsValid == Object.HasInputAuthority)
+        if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
         {
-            horizontal = Input.GetAxis(HORIZONTAL);
-            vertical = Input.GetAxis(VERTICAL);
+            horizontal = Input.GetAxisRaw(HORIZONTAL);
+            vertical = Input.GetAxisRaw(VERTICAL);
         }
     }
 
@@ -58,9 +58,9 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
          * the client does not have state authority or input authority
          * the requested type of input does not exist in the simulation
          */
-        if (Runner.TryGetInputForPlayer<PlayerData>(Object.InputAuthority, out var input))
+        if (Runner.TryGetInputForPlayer<NetworkInputData>(Object.InputAuthority, out var input))
         {
-            rigid.velocity = new Vector3(input.HorizontalInput * moveSpeed, 0f, input.VerticalInput * moveSpeed);
+            networkCharacterController.Move(input.MovementsDirection * moveSpeed * Runner.DeltaTime);
         }
     }
 
@@ -68,14 +68,14 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     /// Get the player input data.
     /// </summary>
     /// <returns>Returns the player input data.</returns>
-    public PlayerData GetPlayerNetworkInput()
+    public NetworkInputData GetPlayerNetworkInput()
     {
         // Create the data we want to send
-        PlayerData data = new PlayerData()
-        {
-            HorizontalInput = horizontal,
-            VerticalInput = vertical
-        };
+        NetworkInputData data = new NetworkInputData();
+
+        // Set input data
+        data.MovementsDirection.x = horizontal;
+        data.MovementsDirection.z = vertical;
 
         // Return the data
         return data;
