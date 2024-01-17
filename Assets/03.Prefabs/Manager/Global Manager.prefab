@@ -92,3 +92,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   networkRunnerPrefab: {fileID: 3841274013905698805, guid: 301d5023ef1a6774281383f8a94e2281,
     type: 3}
+  networkDataHandlerManagerPrefab:
+    RawGuidValue: f98a4e19cee2021428b16eb8d0e320ca

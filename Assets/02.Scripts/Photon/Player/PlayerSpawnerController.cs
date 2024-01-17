@@ -18,6 +18,9 @@ public class PlayerSpawnerController : NetworkBehaviour, IPlayerJoined, IPlayerL
     [Header("Settings")]
     [SerializeField] private List<Transform> spawnPointList = new List<Transform>();
 
+    // Database
+    private Dictionary<PlayerRef, NetworkObject> spawnedPlayers = new Dictionary<PlayerRef, NetworkObject>();
+
 
     public override void Spawned()
     {
@@ -52,6 +55,9 @@ public class PlayerSpawnerController : NetworkBehaviour, IPlayerJoined, IPlayerL
 
             // Set the player object on the runner (so we can know which player is which object)
             Runner.SetPlayerObject(playerRef, playerObject);
+
+            // Add the player to the database
+            spawnedPlayers.Add(playerRef, playerObject);
         }
     }
 
@@ -72,6 +78,9 @@ public class PlayerSpawnerController : NetworkBehaviour, IPlayerJoined, IPlayerL
 
             // Reset player object
             Runner.SetPlayerObject(playerRef, null);
+
+            // Remove the player from the database
+            spawnedPlayers.Remove(playerRef);
         }
     }
 

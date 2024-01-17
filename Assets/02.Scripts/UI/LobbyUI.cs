@@ -6,9 +6,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-// Fusion
-using Fusion;
-
 
 [DisallowMultipleComponent]
 public class LobbyUI : MonoBehaviour
@@ -16,20 +13,18 @@ public class LobbyUI : MonoBehaviour
     // Cached references
     private NetworkRunnerController networkRunnerController = null;
 
-    [Header("Room Elements")]
-    [SerializeField] private Button RandomJoinButton = null;
 
     private void OnGUI()
     {
         int buttonWidth = 200;
         int buttonHeight = 50;
 
-        int posX = Screen.width - buttonWidth - 10; 
-        int posY = 10; 
+        int posX = Screen.width - buttonWidth - 10;
+        int posY = 10;
 
         if (GUI.Button(new Rect(posX, posY, buttonWidth, buttonHeight), "Join Random Room"))
         {
-            JoinRandomRoom();
+            FindMatch();
         }
     }
 
@@ -37,26 +32,26 @@ public class LobbyUI : MonoBehaviour
     {
         // Cache references
         networkRunnerController = GlobalManagers.Instance.NetworkRunnerController;
-
-        // Assign button listeners
-        RandomJoinButton.onClick.AddListener(JoinRandomRoom);
-
-        // CreateRoomBtn.onClick.AddListener(() => CreateRoom(GameMode.Host, createRoomInputField.text));
-        // JoinRoomButton.onClick.AddListener(() => CreateRoom(GameMode.Client, joinRoomByArgInputField.text));
     }
 
-    private void CreateRoom(GameMode mode, string field)
+    public void CreateRoom(string roomName)
     {
-        if (field.Length >= 2)
+        if (!string.IsNullOrEmpty(roomName))
         {
-            Debug.Log($"------------ {mode} ------------");
-            networkRunnerController.StartGame(mode, field);
+            networkRunnerController.CreateRoom(roomName);
         }
     }
 
-    private void JoinRandomRoom()
+    public void JoinRoom(string roomName)
     {
-        Debug.Log($"------------ JoinRandomRoom ------------");
-        networkRunnerController.StartGame(GameMode.AutoHostOrClient, string.Empty);
+        if (!string.IsNullOrEmpty(roomName))
+        {
+            networkRunnerController.JoinRoom(roomName);
+        }
+    }
+
+    private void FindMatch()
+    {
+        networkRunnerController.FindMatch();
     }
 }
