@@ -1,4 +1,4 @@
-// System
+ï»¿// System
 using System;
 using System.Linq;
 using System.Threading.Tasks;
@@ -37,7 +37,7 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
     private Coroutine restructureRoutine = null;
 
     /// <summary>
-    /// ÀÚµ¿À¸·Î ¸ÅÄ¡¸ŞÀÌÅ·À» ÇØ »ó´ë¸¦ Ã£¾ÆÁÖ´Â ÇÔ¼ö
+    /// ìë™ìœ¼ë¡œ ë§¤ì¹˜ë©”ì´í‚¹ì„ í•´ ìƒëŒ€ë¥¼ ì°¾ì•„ì£¼ëŠ” í•¨ìˆ˜
     /// </summary>
     public void FindMatch()
     {
@@ -45,18 +45,18 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
     }
 
     /// <summary>
-    /// ¹æÀ» ¸¸µé¾îÁÖ´Â ÇÔ¼ö
+    /// ë°©ì„ ë§Œë“¤ì–´ì£¼ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <param name="roomName">¹æ ÀÌ¸§</param>
+    /// <param name="roomName">ë°© ì´ë¦„</param>
     public void CreateRoom(string roomName)
     {
         StartGame(GameMode.Host, $"[Room] {roomName}");
     }
 
     /// <summary>
-    /// ¹æ¿¡ µé¾î°¡´Â ÇÔ¼ö
+    /// ë°©ì— ë“¤ì–´ê°€ëŠ” í•¨ìˆ˜
     /// </summary>
-    /// <param name="roomName">¹æ ÀÌ¸§</param>
+    /// <param name="roomName">ë°© ì´ë¦„</param>
     public void JoinRoom(string roomName)
     {
         StartGame(GameMode.Client, $"[Room] {roomName}");
