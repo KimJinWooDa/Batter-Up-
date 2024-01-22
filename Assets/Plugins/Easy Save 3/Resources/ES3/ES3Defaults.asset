@@ -33,7 +33,10 @@ MonoBehaviour:
     - Assembly-CSharp
     - Assembly-CSharp-firstpass
     - AutoSet
+    - CFXRDemo
+    - CFXRRuntime
     - Fusion.Unity
+    - KinoBloom.Runtime
     - Meta.XR.BuildingBlocks
     - Oculus.Haptics
     - Oculus.Interaction
