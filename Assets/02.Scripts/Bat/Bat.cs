@@ -31,7 +31,7 @@ public class Bat : MonoBehaviour
         Rigidbody rb = other.rigidbody;
         
         var b = other.contacts[0].point;
-        Vector3 forceDirection = (rb.transform.localPosition - b).normalized;
+        Vector3 forceDirection = (rb.transform.position - transform.TransformDirection(b)).normalized;
         float forceMagnitude = rigidbody.velocity.magnitude * rigidbody.mass * velocity;
         
         rb.AddForce(forceDirection * forceMagnitude * power, ForceMode.Impulse);
