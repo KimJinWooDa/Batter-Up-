@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/SingularityGroup.HotReload.EditorDependencies.dll.meta
 guid: 2286e58e1d144b84c925391e896974b2
+=======
+guid: 5b5e9b67510014451af9a0856a7686bc
+>>>>>>> Stashed changes:Assets/com.meta.xr.sdk.haptics/Plugins/libs/macOS/ARM64/libhaptics_sdk.dylib.meta
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2

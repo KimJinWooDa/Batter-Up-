@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Easy Save 3/Resources.meta
 guid: 3960a15795052a74c9e435eab41ab9c3
+=======
+guid: 8f36826a0732a42ce803f9d04dca0958
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Resources.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

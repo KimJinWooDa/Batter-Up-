@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Runtime/Libs/EditorOnly/SingularityGroup.HotReload.RuntimeDependencies2020.dll.meta
 guid: 784812c918589424a90509ea34a51da0
+=======
+guid: e555693fcfe774c3b9c83a293c3f0bd2
+>>>>>>> Stashed changes:Assets/com.meta.xr.sdk.haptics/Plugins/libs/Android/ARMv7/libhaptics_sdk.so.meta
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Examples/Scenes/XR/Prefabs.meta
 guid: 656301cc2a64b2c488b80775a22acbf5
+=======
+guid: f562b034696e544fb82b19faa7007b3e
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/InteractableItems/Prefabs.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

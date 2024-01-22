@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/icon_circle_black.png.meta
 guid: e74855f29a0ba40b18b2216d398ba359
+=======
+guid: d9e49882d15c84defb2fa5d09442b36d
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/InteractableItems/Textures/bb_thumb_pointing.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

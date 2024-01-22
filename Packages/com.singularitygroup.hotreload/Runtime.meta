@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Runtime.meta
 guid: 8026562867072c3409c904654ec3c17f
+=======
+guid: 0d8628fe2027f488ea9d3037470679fc
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Runtime.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

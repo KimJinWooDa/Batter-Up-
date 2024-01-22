@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Examples/Shaders.meta
 guid: b1a9c7665efec3c4e9a01ee859d4b3ea
+=======
+guid: 34fe4edaa58fe4053b8d678cef5789bd
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Resources/Shaders.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

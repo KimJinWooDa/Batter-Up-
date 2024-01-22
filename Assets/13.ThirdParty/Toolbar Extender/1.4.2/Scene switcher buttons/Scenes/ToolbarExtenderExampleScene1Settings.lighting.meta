@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/13.ThirdParty/Toolbar Extender/1.4.2/Scene switcher buttons/Scenes/ToolbarExtenderExampleScene1Settings.lighting.meta
 guid: 967cff2510cf0f44d9d2d7e5744ac5a9
+=======
+guid: c164e2c0ee7c34602b66fd546e1c9b1e
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/InteractableItems/Pokeable Item.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 4890085278179872738

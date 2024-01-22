@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Runtime/OSX/HotReloadNativeHelper.dylib.meta
 guid: 56a90f73ab41d4145bb173186644f641
+=======
+guid: c2d555e9b3f3c43fa81514d302f26537
+>>>>>>> Stashed changes:Assets/com.meta.xr.sdk.haptics/Plugins/libs/macOS/x86-64/libhaptics_sdk.dylib.meta
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2

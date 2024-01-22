@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/04.Materials/New Lighting Settings.lighting.meta
 guid: ae8048103fb9d604e84608e7d829126c
+=======
+guid: 4e7f99d575d024ff29fef6316537b683
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Lighting/DefaultLightingSettings.lighting.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 4890085278179872738

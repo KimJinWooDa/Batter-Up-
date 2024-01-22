@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Scripts/Attributes/NaughtyAttributes/Core.meta
 guid: 5a44f7148df17d443a5ff41f15f8014f
+=======
+guid: 20efe8c0195584c8089eb8ab2501f232
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Core.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Icon_Player.png.meta
 guid: 90cf8e542151548c6aa3cba26467e144
+=======
+guid: 4e669e19a18484828a59427554f8fb81
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Textures/Active.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

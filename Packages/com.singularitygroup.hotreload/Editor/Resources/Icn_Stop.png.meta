@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/Icn_Stop.png.meta
 guid: bef6749cf91a43b4e8368429a0487ac9
+=======
+guid: 2c86f14804bd542079b71c803563dd83
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/ThirdParty/Textures/ComprehensiveGrabMapTexture.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

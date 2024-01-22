@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Runtime/Demo/Scenes.meta
 guid: c895e9065d763824f9211fa8054f7c2e
+=======
+guid: e99ca122749c040808b313731ddb2ca7
+>>>>>>> Stashed changes:Assets/Oculus/VR/Editor/Scenes.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

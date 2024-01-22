@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Examples/Textures.meta
 guid: d8dee1b3f50f7054daddaeb99b6846d5
+=======
+guid: 0d6587febbc6049ee896a6531dc9985f
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/InteractableItems/Textures.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

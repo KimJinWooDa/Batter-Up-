@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Easy Save 3/Editor/checkmarkSmall.png.meta
 guid: ca44f6eb870d244cfb1c83054a69ffc3
 timeCreated: 1484046036
 licenseType: Store
+=======
+guid: 45cc1c5241d0548eb924666f904e2202
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Textures/BlockedGradient.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 4

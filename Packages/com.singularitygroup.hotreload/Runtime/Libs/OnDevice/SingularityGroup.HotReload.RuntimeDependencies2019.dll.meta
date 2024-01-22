@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Runtime/Libs/OnDevice/SingularityGroup.HotReload.RuntimeDependencies2019.dll.meta
 guid: 4febf8334e6a82f4e9faf3513c7fcc8d
+=======
+guid: 2f102449d71e245f191397d2208261b6
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Plugins/MacArm/InteractionSdk.dylib.meta
 PluginImporter:
   externalObjects: {}
   serializedVersion: 2

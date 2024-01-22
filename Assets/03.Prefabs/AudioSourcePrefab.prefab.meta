@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/03.Prefabs/AudioSourcePrefab.prefab.meta
 guid: 0665d1b10ed529643943ca52f671c751
+=======
+guid: 6855c40f93b1f43cd9a7dda375be3ec3
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/InteractableItems/Prefabs/[BB] Pointable Cube.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

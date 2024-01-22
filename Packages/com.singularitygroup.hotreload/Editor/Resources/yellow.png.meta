@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/yellow.png.meta
 guid: 90079bcff5ee4ece784cb51fb94a4b1d
+=======
+guid: 2a06a4bc001894994a202c4e75652f6f
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Props/WaterParticles/Textures/StreamAlpha.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

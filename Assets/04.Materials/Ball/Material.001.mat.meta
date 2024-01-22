@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/04.Materials/Ball/Material.001.mat.meta
 guid: 549cba52ca4964da1a8fdf3841640c32
+========
+guid: 0e4e080631aa04db282cfe40359bb22f
+>>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Materials/CrossMaterial.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

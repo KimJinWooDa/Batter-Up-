@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Resources/bansheegz_database.bytes.meta
 guid: 36da12f2aa0dd8f4da9181a9fb4b524b
+=======
+guid: 1d72334bd792e45688fc7759af0b610a
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/LICENSE.md.meta
 TextScriptImporter:
   externalObjects: {}
   userData: 

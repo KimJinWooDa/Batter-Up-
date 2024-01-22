@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/09.Audio/Bgm_Mario_Clip.mp3.meta
 guid: 4d359af57da47a24ca98f3e0edaaea00
+=======
+guid: b58cfdfc560a546ecb158109a650a4b6
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Audio/Content/Interaction_BasicGrab_Grab_01.wav.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 7

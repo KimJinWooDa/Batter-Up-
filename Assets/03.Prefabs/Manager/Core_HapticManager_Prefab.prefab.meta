@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/03.Prefabs/Manager/Core_HapticManager_Prefab.prefab.meta
 guid: 76ced2b7b3d84f9488b77c60c2a256c9
+=======
+guid: 6ae4d8d722d354ba9ac8e9d8db30b8a5
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/InteractableItems/Prefabs/[BB] Pokeable Plane.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

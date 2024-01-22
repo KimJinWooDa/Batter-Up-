@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Examples/Prefabs.meta
 guid: 8292ad0ab09c1484d9f4d05ac177f69b
+=======
+guid: b03e08451afc04ad797e41c29143fc37
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/HandTracking/Prefabs.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

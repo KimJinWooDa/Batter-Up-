@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/02.Scripts/Bat/Bat.cs.meta
 guid: 54d3863fa4a573343a495820544e65b9
+=======
+guid: f8de457c9dc8340999e45007bfe530be
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Editor/AutoWiring/InteractionAutoWiring.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

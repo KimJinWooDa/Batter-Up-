@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Examples/Sounds.meta
 guid: e8a506d8a4987ba4599ef4a60f49247e
+=======
+guid: 6382a78a4100d4e13854027b0cad4f9a
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Props/BigRedButton/Sounds.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/alert_info.png.meta
 guid: 2699d640b2d1cdd45be9a46539d5018e
+=======
+guid: 604d0527a22fb48aebe2d8237e24868f
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Props/Plants/Textures/PlantSetMat_Normal.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

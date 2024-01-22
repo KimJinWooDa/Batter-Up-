@@ -17,7 +17,7 @@ MonoBehaviour:
   requestsAudioFaceTracking: 1
   hasSentConsentEvent: 1
   hasSetTelemetryEnabled: 1
-  telemetryEnabled: 1
-  telemetryProjectGuid: 309a099b-0419-4ab6-8776-433f703912cc
+  telemetryEnabled: 0
+  telemetryProjectGuid: 5776a663-4f2c-4fb0-bd8b-329462dc64f6
   bodyTrackingFidelity: 1
   bodyTrackingJointSet: 0

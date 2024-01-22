@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/ProjectGeneration/Util.meta
 guid: 15ba2343e4c758e45a3901e7f4ad146f
+=======
+guid: 7ffa44e22ddda499582ccaebd688365a
+>>>>>>> Stashed changes:Assets/Oculus/VR/Scripts/Editor/Util.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

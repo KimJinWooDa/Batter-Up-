@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Runtime/Public/SingularityGroup.HotReload.Runtime.Public.asmdef.meta
 guid: f2be1b7392ef6cc4eafd0ee8ac7a090a
+=======
+guid: b09c7684fa8de4dcf9fe167625e11bd5
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Oculus.Interaction.OVR.Editor.asmdef.meta
 AssemblyDefinitionImporter:
   externalObjects: {}
   userData: 

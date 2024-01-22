@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/icon_circle_gray.png.meta
 guid: 809ef8ee76ad04e198cc8ba61c994f83
+=======
+guid: 0da6bfcd5200a4f3aad8273cca74fd6b
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/InteractableItems/Textures/bb_thumb_poking.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/09.Audio/Bgm_8bit_Clip.mp3.meta
 guid: 6268c3e68dba57a439cedf72ebf2cd0b
+=======
+guid: 7b5ec01d997544d0aa2f06ad9ee5af48
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Audio/Content/Interaction_BasicGestures_SwipeForward_01.wav.meta
 AudioImporter:
   externalObjects: {}
   serializedVersion: 7

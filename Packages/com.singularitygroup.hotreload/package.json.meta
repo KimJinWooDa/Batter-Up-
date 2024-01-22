@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/package.json.meta
 guid: b701518d055fa954b8adaa8000734e5a
+=======
+guid: 1847e5dac6c9446dabe2dab69d86ba87
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Runtime/Prefabs/Legacy/legacy.txt.meta
 TextScriptImporter:
   externalObjects: {}
   userData: 

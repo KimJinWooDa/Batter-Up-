@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Easy Save 3/Resources/ES3/ES3Defaults.asset.meta
 guid: 187a2aff9ca9d2d4781d15fa30ee8031
+=======
+guid: 24c45034b52f943d1872ee7031d7f52d
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/HandTracking/Interaction Hand Tracking.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 11400000

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/grey.png.meta
 guid: c381173cda2dd9304b52e11e1a7537bd
+=======
+guid: 444784a0f33bc4b1db9168a574f1eec8
+>>>>>>> Stashed changes:Assets/Oculus/VR/Textures/MetaQuestTouchPro/controller_r_lo_Normal.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

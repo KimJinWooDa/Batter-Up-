@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/icon_warning_circle.png.meta
 guid: 0f8d84c5136cc4c119f14ee9797fb05f
+=======
+guid: 7f876c94525184255940292f5b47ae96
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Props/CoffeeCup/CoffeeCup_AlbedoRoughness.tga.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}

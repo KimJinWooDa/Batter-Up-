@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Easy Save 3/Editor/es3Logo16x16-bw.png.meta
 guid: 3ae63f85ae558634d83caaf5a332d1ba
+=======
+guid: 40738cd4d49654dc0bb07f3f36aa972a
+>>>>>>> Stashed changes:Assets/Oculus/VR/Editor/BuildingBlocks/BlockData/RoomModel/Textures/Checker.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

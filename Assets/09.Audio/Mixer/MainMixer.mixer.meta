@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/09.Audio/Mixer/MainMixer.mixer.meta
 guid: 503826a2ee1c76d41b2580aba9f9fec4
+=======
+guid: 8b775a69acd354f42a3816eaf96cf054
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/InteractableItems/Grabbable Item.asset.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 24100000

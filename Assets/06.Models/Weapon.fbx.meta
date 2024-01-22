@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/06.Models/Weapon.fbx.meta
 guid: 376ed791416684448957aa504069ae82
+=======
+guid: aa870d7af60b34c56addd083293fd8a3
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Environment/MRDesk/Models/MRDesk.fbx.meta
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []

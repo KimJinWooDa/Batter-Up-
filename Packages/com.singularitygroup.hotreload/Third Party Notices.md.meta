@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Third Party Notices.md.meta
 guid: b78a618995758fa44b4d046ff92ea93b
+=======
+guid: d4a920063d68147bc88b69af198bb28b
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/README.md.meta
 TextScriptImporter:
   externalObjects: {}
   userData: 

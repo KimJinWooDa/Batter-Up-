@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Window/GUI/Options/Base.meta
 guid: bb8474c37f13d704d96b43e0f681680d
+=======
+guid: 258aa55fdcdf3496cbc0b6d5963d56b6
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Scripts/Interaction/Core/Base.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

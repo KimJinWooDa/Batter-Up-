@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/02.Scripts/Player/Locomotion.meta
 guid: fc7a78bac4ee20d4b8fb6b71283312b0
+=======
+guid: 45d2adc003a6d4b3fad6a2df3128dd53
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Animations/Locomotion.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Easy Save 3/Editor/AutoSaveWindow.cs.meta
 guid: 6065cc5492e9f49728674de9a0c1fe84
 timeCreated: 1519132286
+=======
+guid: f34559f455f6245959109d093ef3e749
+timeCreated: 1502990005
+>>>>>>> Stashed changes:Assets/Oculus/VR/Scripts/Composition/OVRComposition.cs.meta
 licenseType: Store
 MonoImporter:
   serializedVersion: 2

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/04.Materials/Ball/Material.002.mat.meta
 guid: 4b2f3b7420084420fa16b27e24cb9d26
+========
+guid: d02752591efbb492fbbf08c903418b25
+>>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Materials/DebugUnlitMaterial.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

@@ -1,7 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Easy Save 3/Editor/es3Logo16x16.png.meta
 guid: 4697547d67ec24040b678d7b35835286
 timeCreated: 1495455081
 licenseType: Store
+=======
+guid: 030e97aeeb79447fa872375e402a3b82
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Textures/Default.png.meta
 TextureImporter:
   fileIDToRecycleName: {}
   serializedVersion: 4

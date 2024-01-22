@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/02.Scripts/Utils.meta
 guid: c43b36efefa280a4e91b4220fc772c46
+=======
+guid: 5411068525b9842f1821c9b2db787e3b
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Editor/Utils.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

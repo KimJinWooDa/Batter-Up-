@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Examples/Prefabs/Poses.meta
 guid: 09ce19f138911ff4697bafe4b7f783e0
+=======
+guid: be3ff035ca02841ddbfb7e7e016f95c7
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Poses.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

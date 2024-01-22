@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/LICENSE.md.meta
 guid: 0f0ed454ae8a66041bea966cdcee0f2e
+=======
+guid: a043704ecf43d4c1ca59ac107c64f75c
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/LICENSE.md.meta
 TextScriptImporter:
   externalObjects: {}
   userData: 

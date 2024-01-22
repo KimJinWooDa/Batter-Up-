@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/02.Scripts/Haptic.meta
 guid: 0715e6e74fc74354d920fe8ee6e6bac5
+=======
+guid: 623babea2650545d3b8eee4cc34f659d
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Editor/Body.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

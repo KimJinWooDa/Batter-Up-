@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/03.Prefabs/UI/UI_RayExampleFlatCanvas_Prefab.prefab.meta
 guid: dcd6fd1118b73c54bb958d203e01743a
+=======
+guid: a86d520b449574ccbaedd03f91218a29
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/InteractableItems/Prefabs/[BB] Grabbable Cube.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

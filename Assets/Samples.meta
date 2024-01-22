@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Samples.meta
 guid: 862b86b63e190924badf319990399115
+=======
+guid: bc7c5c459ca564ed4aaaee98fcedc392
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Editor/AutoWiring.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

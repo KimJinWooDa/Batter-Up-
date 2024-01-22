@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/Icn_play.png.meta
 guid: 052ef782f5237784eab3e4952a88afde
+=======
+guid: 88966a66c1e38459697f0f9e243592c4
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Props/PictureFrame/Textures/Shelf.jpg.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

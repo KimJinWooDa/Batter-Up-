@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/02.Scripts/Photon/Sound.meta
 guid: a5793fdc49236e14c9b6d6abe97fa350
+=======
+guid: 5b1674dbb036c4bd7a8a24f9401754d8
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Editor/Grab.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

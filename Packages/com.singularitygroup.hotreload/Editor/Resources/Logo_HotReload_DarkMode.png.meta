@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/Logo_HotReload_DarkMode.png.meta
 guid: 0c501457e83420242a3ac14642818be3
+=======
+guid: fd2fa1d244c834781b3b8c417b65a465
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Props/TennisBall/TennisBall_AlbedoRoughness.tga.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}

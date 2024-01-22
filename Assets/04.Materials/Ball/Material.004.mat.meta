@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< Updated upstream:Assets/04.Materials/Ball/Material.004.mat.meta
 guid: a3f803c47ea344764b03a676f5308d64
+========
+guid: f20d19534dac84bb998f07b53774026f
+>>>>>>>> Stashed changes:Assets/Oculus/Interaction/Runtime/Materials/DistanceReticle.mat.meta
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 2100000

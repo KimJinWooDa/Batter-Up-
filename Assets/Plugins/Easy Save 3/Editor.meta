@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Easy Save 3/Editor.meta
 guid: 600dbc665993148f7b59ae7356fe862e
+=======
+guid: 0e3bc35f092a741aab7ef22f8e65eb2e
+>>>>>>> Stashed changes:Assets/Oculus/VR/Scripts/Editor.meta
 folderAsset: yes
 timeCreated: 1474041532
 licenseType: Store

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/Logo_HotReload_LightMode.png.meta
 guid: 4a83d4a4d357e18408c025ef0737ab39
+=======
+guid: 2d5e1ab5e9dfb448d94ccbfd7c468bd9
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Props/Cube/Textures/CubeTextureBlue.tga.meta
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}

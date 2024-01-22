@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/red.png.meta
 guid: b0408809d04ad6d719d1e4d66c181cc2
+=======
+guid: 4e65aa6d608794e7b867895a9688a500
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Props/WaterParticles/Textures/SprayAlpha.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

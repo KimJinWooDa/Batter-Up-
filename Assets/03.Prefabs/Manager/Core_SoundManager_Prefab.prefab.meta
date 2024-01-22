@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/03.Prefabs/Manager/Core_SoundManager_Prefab.prefab.meta
 guid: d2b5d17753f664b4ca66dac95f2d6b1a
+=======
+guid: 201c199a349e54eb48bbc7999c573721
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/HandTracking/Prefabs/[BB] Hands.prefab.meta
 PrefabImporter:
   externalObjects: {}
   userData: 

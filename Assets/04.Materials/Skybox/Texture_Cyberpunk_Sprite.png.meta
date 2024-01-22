@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/04.Materials/Skybox/Texture_Cyberpunk_Sprite.png.meta
 guid: 47099ef6cc08c5d4eb8fad1bb34c3659
+=======
+guid: d6747bc5434be490da2dddd5ed727f7d
+>>>>>>> Stashed changes:Assets/Oculus/VR/Editor/BuildingBlocks/Icons/ovr_bb_icon.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

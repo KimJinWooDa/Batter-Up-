@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Easy Save 3/Editor/ES3ComponentTypeTemplate.txt.meta
 guid: b74f7ff5e731846249f9e22ab7afedfb
 timeCreated: 1483698819
+=======
+guid: 0ea15e8df1c3147c9a097e0b348e5686
+timeCreated: 1493325988
+>>>>>>> Stashed changes:Assets/Oculus/VR/Plugins/placeholder.txt.meta
 licenseType: Store
 TextScriptImporter:
   userData: 

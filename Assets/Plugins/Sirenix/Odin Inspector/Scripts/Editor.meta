@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Scripts/Editor.meta
 guid: 62036a4826ad8d34baa220b55f9fec55
+=======
+guid: 441766615bc32497485621f754be0659
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Scripts/HandGrabRecord/Editor.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Examples/Mesh/Materials.meta
 guid: d2ba8a2d098c45141afbfaeead7e2e25
+=======
+guid: c89e6d9535d864a2bba45d182b4ba709
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Materials.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

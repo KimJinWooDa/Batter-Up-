@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/SingularityGroup.HotReload.Editor.asmdef.meta
 guid: 43aab4a50a5839e44af6c24ac5006688
+=======
+guid: 6e8df4d977c794fb0bec472a54cbb3e1
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Editor/Oculus.Interaction.Editor.asmdef.meta
 AssemblyDefinitionImporter:
   externalObjects: {}
   userData: 

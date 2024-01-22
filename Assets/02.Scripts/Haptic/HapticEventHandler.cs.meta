@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/02.Scripts/Haptic/HapticEventHandler.cs.meta
 guid: f1f648857c9d5ca49850901bdfc2ca2d
+=======
+guid: ade37c78066164aa5b82e658883f31bb
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Editor/AutoWiring/AutoWiring.cs.meta
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2

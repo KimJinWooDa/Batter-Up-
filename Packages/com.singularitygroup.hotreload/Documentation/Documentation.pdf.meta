@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Documentation/Documentation.pdf.meta
 guid: 8999c2c2d9cadcb44a617a5df023bfa1
+=======
+guid: 1c6214dab520246d3b19c1ba69e67dc5
+>>>>>>> Stashed changes:Assets/Oculus/VR/Editor/Scenes/OVRTransitionScene.unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 

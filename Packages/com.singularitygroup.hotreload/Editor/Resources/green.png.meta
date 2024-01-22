@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Packages/com.singularitygroup.hotreload/Editor/Resources/green.png.meta
 guid: 45ccf4d7106fc972cb676d15f014f50c
+=======
+guid: a9cf3351736f9414d830a5c0182fdafd
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Textures/SCrim.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream:Assets/Plugins/Sirenix/Odin Inspector/Examples/Scenes/XR/Scripts.meta
 guid: 0b532e423e6365944bd5816092d7a888
+=======
+guid: 33575c942b25d48bca80a48c58046ef1
+>>>>>>> Stashed changes:Assets/Oculus/Interaction/OVRIntegration/Editor/Blocks/HandTracking/Scripts.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
