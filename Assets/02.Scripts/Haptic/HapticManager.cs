@@ -14,9 +14,9 @@ public class HapticManager : MonoBehaviourSingleton<HapticManager>
     private HapticClipPlayer currentHapticClipPlayer;
     private void Start()
     {
-        if (ES3.KeyExists(SaveDataKeys.HapticStrengthKey))
+        if (ES3.KeyExists(SaveDataKeys.Haptic))
         {
-            HapticStrength = ES3.Load<float>(SaveDataKeys.HapticStrengthKey);
+            HapticStrength = ES3.Load<float>(SaveDataKeys.Haptic);
 
             hapticSlider.value = HapticStrength;
         }
@@ -30,7 +30,7 @@ public class HapticManager : MonoBehaviourSingleton<HapticManager>
     public void UpdateAudioMixerGroup(float volume)
     {
         HapticStrength = volume;
-        ES3.Save(SaveDataKeys.HapticStrengthKey, HapticStrength);
+        ES3.Save(SaveDataKeys.Haptic, HapticStrength);
     }
 
     public void PlayHaptic(HapticData hapticData, float volume)
@@ -73,6 +73,6 @@ public class HapticManager : MonoBehaviourSingleton<HapticManager>
     private void OnDestroy()
     {
         currentHapticClipPlayer?.Dispose();
-        ES3.Save(SaveDataKeys.HapticStrengthKey, HapticStrength);
+        ES3.Save(SaveDataKeys.Haptic, HapticStrength);
     }
 }
