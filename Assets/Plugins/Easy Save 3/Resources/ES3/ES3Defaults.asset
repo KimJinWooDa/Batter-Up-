@@ -42,6 +42,7 @@ MonoBehaviour:
     - Oculus.VR
     - SingularityGroup.HotReload.Runtime
     - SingularityGroup.HotReload.Runtime.Public
+    - TechniePhysicsCreator
     - UniTask
     - UniTask.Addressables
     - UniTask.DOTween

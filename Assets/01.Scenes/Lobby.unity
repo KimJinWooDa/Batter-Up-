@@ -2057,7 +2057,7 @@ GameObject:
   - component: {fileID: 2101847124}
   - component: {fileID: 2101847123}
   m_Layer: 0
-  m_Name: Bgm_Mario_Clip
+  m_Name: Bgm_#3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2074,7 +2074,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5620679593044438046, guid: 503826a2ee1c76d41b2580aba9f9fec4,
     type: 2}
-  m_audioClip: {fileID: 8300000, guid: 4d359af57da47a24ca98f3e0edaaea00, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 62707fdf320bff149b322f57de4d0b26, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

@@ -40,19 +40,19 @@ public class SoundManager : MonoBehaviourSingleton<SoundManager>
 
     private void Start()
     {
-        if (ES3.KeyExists(SaveDataKeys.BGMVolumeKey) || ES3.KeyExists(SaveDataKeys.SFXVolumeKey) || ES3.KeyExists(SaveDataKeys.MasterVolumeKey))
+        if (ES3.KeyExists(SaveDataKeys.BGM) || ES3.KeyExists(SaveDataKeys.SFX) || ES3.KeyExists(SaveDataKeys.Master))
         {
-            BgmMixerGroupVolume = ES3.Load<float>(SaveDataKeys.BGMVolumeKey);
-            SfxMixerGroupVolume = ES3.Load<float>(SaveDataKeys.SFXVolumeKey);
-            MasterMixerGroupVolume = ES3.Load<float>(SaveDataKeys.MasterVolumeKey);
+            BgmMixerGroupVolume = ES3.Load<float>(SaveDataKeys.BGM);
+            SfxMixerGroupVolume = ES3.Load<float>(SaveDataKeys.SFX);
+            MasterMixerGroupVolume = ES3.Load<float>(SaveDataKeys.Master);
 
             masterSlider.value = MasterMixerGroupVolume;
             bgmSlider.value = BgmMixerGroupVolume;
             sfxSlider.value = SfxMixerGroupVolume;
             
-            bgmAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.BGMVolumeKey, Mathf.Log10(BgmMixerGroupVolume) * 20);
-            sfxAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.SFXVolumeKey, Mathf.Log10(SfxMixerGroupVolume) * 20);
-            masterAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.MasterVolumeKey, Mathf.Log10(MasterMixerGroupVolume) * 20);
+            bgmAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.BGM, Mathf.Log10(BgmMixerGroupVolume) * 20);
+            sfxAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.SFX, Mathf.Log10(SfxMixerGroupVolume) * 20);
+            masterAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.Master, Mathf.Log10(MasterMixerGroupVolume) * 20);
         }
     }
 
@@ -73,7 +73,7 @@ public class SoundManager : MonoBehaviourSingleton<SoundManager>
             {
                 if (sound.IsDelayed)
                 {
-                    await WaitForSecondsUniTask(sound.DelayTime, cancellationTokenSource.Token);
+                    await WaitForSecondsUniTask(sound.DelayTime);
                 }
                 sound.AudioSource.Play();
 
@@ -81,9 +81,9 @@ public class SoundManager : MonoBehaviourSingleton<SoundManager>
         }
     }
     
-    private async UniTask WaitForSecondsUniTask(float seconds, CancellationToken cancellationToken)
+    private async UniTask WaitForSecondsUniTask(float seconds, CancellationToken cancellationToken = default)
     {
-        await UniTask.Delay(TimeSpan.FromSeconds(seconds), cancellationToken: cancellationToken);
+        await UniTask.Delay(TimeSpan.FromSeconds(seconds), cancellationToken: destroyCancellationToken);
     }
     
     private void StopAllTasks()
@@ -122,7 +122,7 @@ public class SoundManager : MonoBehaviourSingleton<SoundManager>
         audioSource.clip = sfx.AudioClip;
 
         float strength = MathUtil.Remap(volume, 0, 5, 0, SfxMixerGroupVolume);
-        Debug.Log(strength);
+     
         audioSource.volume = strength;
         audioSource.spatialBlend = sfx.SpatialBlend;
         audioSource.outputAudioMixerGroup = sfxAudioMixerGroup;
@@ -169,30 +169,33 @@ public class SoundManager : MonoBehaviourSingleton<SoundManager>
         {
             case Sound.SoundType.BGM:
                 BgmMixerGroupVolume = volume;
-                bgmAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.BGMVolumeKey, Mathf.Log10(BgmMixerGroupVolume) * 20);
+                bgmAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.BGM, Mathf.Log10(BgmMixerGroupVolume) * 20);
                 
                 break;
             case Sound.SoundType.SFX:
                 SfxMixerGroupVolume = volume;
-                sfxAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.SFXVolumeKey, Mathf.Log10(SfxMixerGroupVolume) * 20);
+                sfxAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.SFX, Mathf.Log10(SfxMixerGroupVolume) * 20);
                
                 break;
             default:
                 MasterMixerGroupVolume = volume;
-                masterAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.MasterVolumeKey, Mathf.Log10(MasterMixerGroupVolume) * 20);
+                masterAudioMixerGroup.audioMixer.SetFloat(SaveDataKeys.Master, Mathf.Log10(MasterMixerGroupVolume) * 20);
                
                 break;
         }
-        
-        ES3.Save(SaveDataKeys.BGMVolumeKey, BgmMixerGroupVolume);
-        ES3.Save(SaveDataKeys.SFXVolumeKey, SfxMixerGroupVolume);
-        ES3.Save(SaveDataKeys.MasterVolumeKey, MasterMixerGroupVolume);
+
+        SaveVolume();
     }
 
     private void OnDestroy()
     {
-        ES3.Save(SaveDataKeys.BGMVolumeKey, BgmMixerGroupVolume);
-        ES3.Save(SaveDataKeys.SFXVolumeKey, SfxMixerGroupVolume);
-        ES3.Save(SaveDataKeys.MasterVolumeKey, MasterMixerGroupVolume);
+        SaveVolume();
+    }
+
+    private void SaveVolume()
+    {
+        ES3.Save(SaveDataKeys.BGM, BgmMixerGroupVolume);
+        ES3.Save(SaveDataKeys.SFX, SfxMixerGroupVolume);
+        ES3.Save(SaveDataKeys.Master, MasterMixerGroupVolume);
     }
 }

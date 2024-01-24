@@ -1,10 +1,12 @@
+using AutoSet.Utils;
 using UnityEngine;
 public class Bat : MonoBehaviour
 {
     private Vector3 previousPosition;
     private Vector3 currentPosition;
     private float velocity;
-
+    [SerializeField] private float power = 10f;
+    [SerializeField, AutoSet] private Rigidbody rigidbody;
     private void Start()
     {
         previousPosition = transform.position;
@@ -25,11 +27,16 @@ public class Bat : MonoBehaviour
         {
             return;
         }
-
+        
+        Rigidbody rb = other.rigidbody;
+        
         var b = other.contacts[0].point;
+        Vector3 forceDirection = (rb.transform.position - transform.TransformDirection(b)).normalized;
+        float forceMagnitude = rigidbody.velocity.magnitude * rigidbody.mass * velocity;
+        
+        rb.AddForce(forceDirection * forceMagnitude * power, ForceMode.Impulse);
         a.PlaySound(b, velocity);
         a.PlayHaptic(velocity);
     }
 
-   
 }

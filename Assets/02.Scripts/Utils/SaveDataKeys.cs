@@ -1,7 +1,7 @@
 public static class SaveDataKeys
 {
-    public const string BGMVolumeKey = "BGM Volume";
-    public const string SFXVolumeKey = "SFX Volume";
-    public const string MasterVolumeKey = "Master Volume";
-    public const string HapticStrengthKey = "Haptic Strength";
+    public const string BGM = "BGM Volume";
+    public const string SFX = "SFX Volume";
+    public const string Master = "Master Volume";
+    public const string Haptic = "Haptic Strength";
 }

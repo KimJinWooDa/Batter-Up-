@@ -22,7 +22,7 @@ public class HapticEventHandler : MonoBehaviour
 
     private HapticClipPlayer m_TargetHapticPlayer;
 
-    private float m_HapticStrength => ES3.Load<float>(SaveDataKeys.HapticStrengthKey);
+    private float m_HapticStrength => ES3.Load<float>(SaveDataKeys.Haptic);
 
     private void Start()
     {

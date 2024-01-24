@@ -38,12 +38,14 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _EdgeWidth: 0.03
+    - _EdgeWidth: 1
     - _FresnelPower: 25
+    - _Metalic: 0
     - _NoiseScale: 30
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ScrollSpeed: 0.01
+    - _Smooth: 0
     m_Colors:
     - _InnerColor: {r: 0.41480097, g: 0.08176094, b: 1, a: 0}
     - _OuterColor: {r: 7.6457424, g: 0.33301285, b: 21.179754, a: 1}
