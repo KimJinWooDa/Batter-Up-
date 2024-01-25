@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< Updated upstream
+<<<<<<<< Updated upstream:Assets/06.Models/Ball/Ball_Chip2.fbx.meta
 guid: 27be3c89d1f3048c091b2521e191a64d
+========
+guid: ff35f081669744c799be38daed89051c
+>>>>>>>> Stashed changes:Assets/Oculus/Interaction/Samples/Objects/Environment/Room/Models/backgroundSkyDome.fbx.meta
+=======
+guid: 27be3c89d1f3048c091b2521e191a64d
+>>>>>>> Stashed changes
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -13,7 +21,11 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Material.005
+<<<<<<< Updated upstream
     second: {fileID: 2100000, guid: 665e500b4b4e04657ba56206fd96cef7, type: 2}
+=======
+    second: {fileID: 2100000, guid: 48a4105e95ea340559739c85f455aa39, type: 2}
+>>>>>>> Stashed changes
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
