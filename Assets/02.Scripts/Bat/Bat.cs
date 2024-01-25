@@ -31,10 +31,9 @@ public class Bat : MonoBehaviour
         Rigidbody rb = other.rigidbody;
         
         var b = other.contacts[0].point;
-        Vector3 forceDirection = (rb.transform.position - transform.TransformDirection(b)).normalized;
-        float forceMagnitude = rigidbody.velocity.magnitude * rigidbody.mass * velocity;
+        Vector3 forceDirection = (rb.transform.position - b).normalized;
         
-        rb.AddForce(forceDirection * forceMagnitude * power, ForceMode.Impulse);
+        rb.AddForce(forceDirection * velocity * power, ForceMode.Impulse);
         a.PlaySound(b, velocity);
         a.PlayHaptic(velocity);
     }
