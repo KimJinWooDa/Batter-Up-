@@ -245,6 +245,7 @@ GameObject:
   - component: {fileID: 6256331823691807730}
   - component: {fileID: 4002314297676010754}
   - component: {fileID: 7366725307555591353}
+  - component: {fileID: 8890572335841621902}
   - component: {fileID: 5922447767144141761}
   m_Layer: 0
   m_Name: Player
@@ -318,6 +319,7 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 4002314297676010754}
   - {fileID: 7366725307555591353}
+  - {fileID: 8890572335841621902}
   - {fileID: 5922447767144141761}
 --- !u!114 &4002314297676010754
 MonoBehaviour:
@@ -351,6 +353,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   localObject: {fileID: 4196542744842929299}
+--- !u!114 &8890572335841621902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7289343105959119551}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61c2a3cf544dc3418e462ccd49576d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigHead: {fileID: 0}
+  rigLeftHand: {fileID: 0}
+  rigRightHand: {fileID: 0}
+  modelHead: {fileID: 0}
+  modelLeftHand: {fileID: 0}
+  modelRightHand: {fileID: 0}
 --- !u!114 &5922447767144141761
 MonoBehaviour:
   m_ObjectHideFlags: 0
