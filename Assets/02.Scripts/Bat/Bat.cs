@@ -2,11 +2,13 @@ using AutoSet.Utils;
 using UnityEngine;
 public class Bat : MonoBehaviour
 {
+    [SerializeField] private float power = 1.5f;
+    [SerializeField, AutoSet] private Rigidbody rigidbody;
+    
     private Vector3 previousPosition;
     private Vector3 currentPosition;
     private float velocity;
-    [SerializeField] private float power = 10f;
-    [SerializeField, AutoSet] private Rigidbody rigidbody;
+    
     private void Start()
     {
         previousPosition = transform.position;
@@ -22,20 +24,16 @@ public class Bat : MonoBehaviour
     
     private void OnCollisionEnter(Collision other)
     {
-        var a = other.gameObject.GetComponent<IHittable>();
-        if (a == null)
+        //Todo : CollisionEnter -> Ball, 
+        if (other.gameObject.TryGetComponent<IHittable>(out var o))
         {
-            return;
+            Rigidbody rigidBody = other.rigidbody;
+            var contactPoint = other.contacts[0].point;
+            
+            Vector3 forceDirection = (rigidBody.transform.position - contactPoint).normalized;
+            rigidBody.AddForce(forceDirection * velocity * power, ForceMode.Impulse);
+            
+            o.OnHit(contactPoint);
         }
-        
-        Rigidbody rb = other.rigidbody;
-        
-        var b = other.contacts[0].point;
-        Vector3 forceDirection = (rb.transform.position - b).normalized;
-        
-        rb.AddForce(forceDirection * velocity * power, ForceMode.Impulse);
-        a.PlaySound(b, velocity);
-        a.PlayHaptic(velocity);
     }
-
 }
