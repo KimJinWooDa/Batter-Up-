@@ -1,8 +1,4 @@
-﻿// System
-using System.Collections;
-using System.Collections.Generic;
-
-// Unity
+﻿// Unity
 using UnityEngine;
 
 // Fusion
