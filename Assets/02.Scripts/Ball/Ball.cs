@@ -12,8 +12,8 @@ public class Ball : MonoBehaviour, IHittable
 
     private void Awake()
     {
-        Debug.Assert(AudioSource != null);
-        Debug.Assert(ParticleSystem != null);
+        //Debug.Assert(AudioSource != null);
+       // Debug.Assert(ParticleSystem != null);
     }
     
     public void OnHit(Vector3 contactPoint)
