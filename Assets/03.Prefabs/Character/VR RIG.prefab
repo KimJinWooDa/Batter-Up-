@@ -1377,6 +1377,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 441238622836059879}
+  - component: {fileID: 4178804577064518433}
   m_Layer: 0
   m_Name: VR RIG
   m_TagString: Untagged
@@ -1401,6 +1402,21 @@ Transform:
   - {fileID: 3182400218430834549}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4178804577064518433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203937821653258349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f358fbbd9f34aa4099a26b96a3c0fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rigHead: {fileID: 5887323195458763335}
+  rigLeftHand: {fileID: 5887323195458845591}
+  rigRightHand: {fileID: 5887323195458834323}
 --- !u!1 &1207565512580047934
 GameObject:
   m_ObjectHideFlags: 0

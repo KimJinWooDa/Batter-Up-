@@ -15,7 +15,6 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private GameObject localObject = null;
-    [SerializeField] private GameObject vrRigPrefab = null;
 
     // Physics
     private float horizontal = 0f;
@@ -38,17 +37,8 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         networkCharacterController = GetComponent<NetworkCharacterController>();
 
         // Set the local object
-        if (HasInputAuthority)
-        {
-            //localObject.SetActive(true);
-
-            // Spawn the VR rig
-            if (vrRigPrefab != null)
-            {
-                Instantiate(vrRigPrefab, Vector3.zero, Quaternion.identity, localObject.transform);
-            }
-        }
-        //else localObject.SetActive(false);
+        if (HasInputAuthority) localObject.SetActive(true);
+        else localObject.SetActive(false);
     }
 
     /// <summary>
@@ -94,5 +84,20 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
 
         // Return the data
         return data;
+    }
+
+    /// <summary>
+    /// Spawn a local object.
+    /// </summary>
+    /// <param name="prefab"></param>
+    public GameObject SpawnLocalObject(GameObject prefab)
+    {
+        if(HasInputAuthority)
+        {
+            // Spawn the prefab
+            if (prefab != null) return Instantiate(prefab, Vector3.zero, Quaternion.identity, localObject.transform);
+        }
+
+        return null;
     }
 }
