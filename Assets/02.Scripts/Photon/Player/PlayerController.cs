@@ -14,6 +14,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
 {
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 6f;
+    [SerializeField] private GameObject localObject = null;
 
     // Physics
     private float horizontal = 0f;
@@ -34,6 +35,10 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     {
         // Cache
         networkCharacterController = GetComponent<NetworkCharacterController>();
+
+        // Set the local object
+        if (HasInputAuthority) localObject.SetActive(true);
+        else localObject.SetActive(false);
     }
 
     /// <summary>

@@ -5322,7 +5322,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6bc5bb9a861b0d43bde154879ff237d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsGrabbed: 0
+  LeftHapticPlayer: {fileID: 0}
+  RightHapticPlayer: {fileID: 0}
   m_GrabInteractor: {fileID: 2539046417558932141}
 --- !u!1 &4848280251411893063
 GameObject:
@@ -8171,7 +8172,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6bc5bb9a861b0d43bde154879ff237d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsGrabbed: 0
+  LeftHapticPlayer: {fileID: 0}
+  RightHapticPlayer: {fileID: 0}
   m_GrabInteractor: {fileID: 5856783952820843359}
 --- !u!1 &7105813301086023624
 GameObject:
@@ -11824,7 +11826,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SyncScale: 0
-  SyncParent: 1
+  SyncParent: 0
   _autoAOIOverride: 1
   DisableSharedModeInterpolation: 0
 --- !u!114 &556326964921037708 stripped
