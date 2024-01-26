@@ -403,12 +403,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a61c2a3cf544dc3418e462ccd49576d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rigHead: {fileID: 4542673859521428240}
-  rigLeftHand: {fileID: 4027840345834885728}
-  rigRightHand: {fileID: 7717475709795696878}
-  modelHead: {fileID: 6814781572070623443}
-  modelLeftHand: {fileID: 6814781572070541571}
-  modelRightHand: {fileID: 6814781572070554887}
+  rigHead: {fileID: 6814781572070623443}
+  rigLeftHand: {fileID: 6814781572070541571}
+  rigRightHand: {fileID: 6814781572070554887}
+  modelHead: {fileID: 4542673859521428240}
+  modelLeftHand: {fileID: 4027840345834885728}
+  modelRightHand: {fileID: 7717475709795696878}
 --- !u!114 &5922447767144141761
 MonoBehaviour:
   m_ObjectHideFlags: 0
