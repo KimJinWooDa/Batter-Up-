@@ -10867,7 +10867,7 @@ PrefabInstance:
     - target: {fileID: 7229202055492887154, guid: 4841ffc0c0203424aa20389fa184badd,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7735954714139492579, guid: 4841ffc0c0203424aa20389fa184badd,
         type: 3}
@@ -12691,6 +12691,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: LocomotionControllerInteractorGroup
+      objectReference: {fileID: 0}
+    - target: {fileID: 7229202055492887154, guid: 4841ffc0c0203424aa20389fa184badd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8899353908417424422, guid: 4841ffc0c0203424aa20389fa184badd,
         type: 3}

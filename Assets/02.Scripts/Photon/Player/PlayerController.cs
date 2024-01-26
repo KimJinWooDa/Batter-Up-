@@ -40,7 +40,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         // Set the local object
         if (HasInputAuthority)
         {
-            localObject.SetActive(true);
+            //localObject.SetActive(true);
 
             // Spawn the VR rig
             if (vrRigPrefab != null)
@@ -48,7 +48,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
                 Instantiate(vrRigPrefab, Vector3.zero, Quaternion.identity, localObject.transform);
             }
         }
-        else localObject.SetActive(false);
+        //else localObject.SetActive(false);
     }
 
     /// <summary>
