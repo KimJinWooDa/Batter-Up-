@@ -371,7 +371,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378411a89480da345945c2f888327a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: -20
+  gravity: 0
   jumpImpulse: 8
   acceleration: 80
   braking: 80
@@ -771,6 +771,16 @@ PrefabInstance:
     - target: {fileID: 223382199265260921, guid: bea3db98cb3a7ae4da0e8aaeddb998de,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3597215743063334558, guid: bea3db98cb3a7ae4da0e8aaeddb998de,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7891785048875859593, guid: bea3db98cb3a7ae4da0e8aaeddb998de,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7891785050768559693, guid: bea3db98cb3a7ae4da0e8aaeddb998de,

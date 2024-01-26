@@ -1178,12 +1178,12 @@ PrefabInstance:
     - target: {fileID: 9096559252721591570, guid: d52e9f050a48d8d418618d66862209ea,
         type: 3}
       propertyPath: playerNetworkPrefab.RawGuidValue.Array.data[0]
-      value: -1983208039785978946
+      value: -5404603367987669358
       objectReference: {fileID: 0}
     - target: {fileID: 9096559252721591570, guid: d52e9f050a48d8d418618d66862209ea,
         type: 3}
       propertyPath: playerNetworkPrefab.RawGuidValue.Array.data[1]
-      value: -2406969639062335782
+      value: 7478960040898447048
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
