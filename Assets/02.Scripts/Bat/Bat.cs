@@ -8,6 +8,7 @@ public class Bat : MonoBehaviour
     private Vector3 previousPosition;
     private Vector3 currentPosition;
     private float velocity;
+    private Player player;
     
     private void Start()
     {
@@ -25,6 +26,8 @@ public class Bat : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         //Todo : CollisionEnter -> Ball, 
+        if (player != null || !player.IsMyTurn) return;
+        
         if (other.gameObject.TryGetComponent<IHittable>(out var o))
         {
             Rigidbody rigidBody = other.rigidbody;
@@ -36,4 +39,15 @@ public class Bat : MonoBehaviour
             o.OnHit(contactPoint);
         }
     }
+
+    #region Inject
+
+    public void InjectPlayer(Player _player)
+    {
+        player = _player;
+    }
+
+    
+
+    #endregion
 }

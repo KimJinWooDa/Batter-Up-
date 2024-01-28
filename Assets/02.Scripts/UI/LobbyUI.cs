@@ -50,7 +50,7 @@ public class LobbyUI : MonoBehaviour
         }
     }
 
-    private void FindMatch()
+    public void FindMatch()
     {
         networkRunnerController.FindMatch();
     }

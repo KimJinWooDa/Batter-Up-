@@ -1378,6 +1378,9 @@ GameObject:
   m_Component:
   - component: {fileID: 441238622836059879}
   - component: {fileID: 4178804577064518433}
+  - component: {fileID: 8156856251004184893}
+  - component: {fileID: 205587586062831687}
+  - component: {fileID: 7997814134375430789}
   m_Layer: 0
   m_Name: VR RIG
   m_TagString: Untagged
@@ -1417,6 +1420,51 @@ MonoBehaviour:
   rigHead: {fileID: 5887323195458763335}
   rigLeftHand: {fileID: 5887323195458845591}
   rigRightHand: {fileID: 5887323195458834323}
+--- !u!114 &8156856251004184893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203937821653258349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07692e7fbfb053b49a43bf141bc3bec0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerLocomotor: {fileID: 401700617897922321}
+--- !u!114 &205587586062831687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203937821653258349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f648857c9d5ca49850901bdfc2ca2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PokeInteractor: {fileID: 439997950092022053}
+  m_GrabInteractor: {fileID: 4738931902165787370}
+  m_RayInteractor: {fileID: 2985577884888492709}
+  HandType: 0
+--- !u!114 &7997814134375430789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1203937821653258349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f648857c9d5ca49850901bdfc2ca2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PokeInteractor: {fileID: 3818281330253647695}
+  m_GrabInteractor: {fileID: 4915308016760448765}
+  m_RayInteractor: {fileID: 2037493260519027176}
+  HandType: 1
 --- !u!1 &1207565512580047934
 GameObject:
   m_ObjectHideFlags: 0
@@ -11569,14 +11617,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 8753165960566866645}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8445982241883230424, guid: 4c0ee7a14e52ba544b89c2f777670cca,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5322240270254947095}
-    - targetCorrespondingSourceObject: {fileID: 2552751781337300309, guid: 4c0ee7a14e52ba544b89c2f777670cca,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 4194461599098287977}
     - targetCorrespondingSourceObject: {fileID: 3480180546880046138, guid: 4c0ee7a14e52ba544b89c2f777670cca,
         type: 3}
       insertIndex: -1
@@ -11607,50 +11647,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Wrist: {fileID: 143699720346942606}
---- !u!1 &1359983591147457902 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2552751781337300309, guid: 4c0ee7a14e52ba544b89c2f777670cca,
-    type: 3}
-  m_PrefabInstance: {fileID: 3581087272800268347}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &4194461599098287977
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1359983591147457902}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncScale: 0
-  SyncParent: 0
-  _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
---- !u!1 &4937277795905282275 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8445982241883230424, guid: 4c0ee7a14e52ba544b89c2f777670cca,
-    type: 3}
-  m_PrefabInstance: {fileID: 3581087272800268347}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &5322240270254947095
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4937277795905282275}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  SyncScale: 0
-  SyncParent: 0
-  _autoAOIOverride: 1
-  DisableSharedModeInterpolation: 0
 --- !u!4 &9179128513587806890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5679112963636671121, guid: 4c0ee7a14e52ba544b89c2f777670cca,
