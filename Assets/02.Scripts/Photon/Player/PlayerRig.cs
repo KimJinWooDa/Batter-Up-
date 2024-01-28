@@ -46,6 +46,9 @@ public class PlayerRig : NetworkBehaviour, IBeforeUpdate
 
             // Create the rig
             var rig = playerController.SpawnLocalObject(vrRigPrefab);
+            
+            // Set local position to zero
+            rig.transform.localPosition = Vector3.zero;
 
             // Cache the rig mapper
             playerRigMapper = rig.GetComponent<PlayerRigMapper>();
@@ -63,7 +66,7 @@ public class PlayerRig : NetworkBehaviour, IBeforeUpdate
         if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
         {
             // Get the rig data
-            headPosition = playerRigMapper.RigHeadPosition;
+           // headPosition = playerRigMapper.RigHeadPosition;
             headRotation = playerRigMapper.RigHeadRotation;
 
             leftHandPosition = playerRigMapper.RigLeftHandPosition;
@@ -86,7 +89,7 @@ public class PlayerRig : NetworkBehaviour, IBeforeUpdate
             // Update the model
             if (modelHead == null || modelLeftHand == null || modelRightHand == null) return;
 
-            modelHead.position = rigData.HeadPosition;
+            //modelHead.position = rigData.HeadPosition;
             modelHead.rotation = rigData.HeadRotation;
 
             modelLeftHand.position = rigData.LeftHandPosition;
@@ -107,7 +110,7 @@ public class PlayerRig : NetworkBehaviour, IBeforeUpdate
         var data = new NetworkRigData();
 
         // Set rig data
-        data.HeadPosition = headPosition;
+        //data.HeadPosition = headPosition;
         data.HeadRotation = headRotation;
         data.LeftHandPosition = leftHandPosition;
         data.LeftHandRotation = leftHandRotation;
