@@ -371,11 +371,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 378411a89480da345945c2f888327a2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gravity: 0
+  gravity: -20
   jumpImpulse: 8
-  acceleration: 80
-  braking: 80
-  maxSpeed: 1
+  acceleration: 10
+  braking: 10
+  maxSpeed: 2
   rotationSpeed: 15
 --- !u!114 &7325936451566185559
 MonoBehaviour:
