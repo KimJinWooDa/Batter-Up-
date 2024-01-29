@@ -56,17 +56,20 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         networkCharacterController = GetComponent<NetworkCharacterController>();
 
         // Set the local object
-        if (HasInputAuthority) localObject.SetActive(true);
+        if (HasInputAuthority)
+        {
+            localObject.SetActive(true);
+
+            // Create the rig
+            var rig = SpawnLocalObject(vrRigPrefab);
+
+            // Set local position to zero
+            rig.transform.localPosition = Vector3.zero;
+
+            // Cache the rig mapper
+            playerRigMapper = rig.GetComponent<PlayerRigMapper>();
+        }
         else localObject.SetActive(false);
-
-        // Create the rig
-        var rig = SpawnLocalObject(vrRigPrefab);
-
-        // Set local position to zero
-        rig.transform.localPosition = Vector3.zero;
-
-        // Cache the rig mapper
-        playerRigMapper = rig.GetComponent<PlayerRigMapper>();
     }
 
     /// <summary>
