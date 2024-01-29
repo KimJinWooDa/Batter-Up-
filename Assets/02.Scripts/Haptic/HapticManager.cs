@@ -31,7 +31,7 @@ public class HapticManager : MonoBehaviourSingleton<HapticManager>
         ES3.Save(SaveDataKeys.Haptic, HapticStrength);
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         ES3.Save(SaveDataKeys.Haptic, HapticStrength);
     }

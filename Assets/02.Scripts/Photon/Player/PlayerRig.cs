@@ -90,7 +90,7 @@ public class PlayerRig : NetworkBehaviour, IBeforeUpdate
             if (modelHead == null || modelLeftHand == null || modelRightHand == null) return;
 
             //modelHead.position = rigData.HeadPosition;
-            modelHead.rotation = rigData.HeadRotation;
+            modelHead.rotation = rigData.HeadRotation * Quaternion.Euler(-90f,0f,0f);
 
             modelLeftHand.position = rigData.LeftHandPosition;
             modelLeftHand.rotation = rigData.LeftHandRotation;

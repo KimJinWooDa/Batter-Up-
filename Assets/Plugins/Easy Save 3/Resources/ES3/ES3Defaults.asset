@@ -40,8 +40,6 @@ MonoBehaviour:
     - Oculus.Interaction.OVR
     - Oculus.Interaction.OVR.Samples
     - Oculus.VR
-    - SingularityGroup.HotReload.Runtime
-    - SingularityGroup.HotReload.Runtime.Public
     - TechniePhysicsCreator
     - UniTask
     - UniTask.Addressables

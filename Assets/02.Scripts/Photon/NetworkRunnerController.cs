@@ -27,7 +27,7 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
     // Constants
     private const string GAME_SCENE_NAME = "MainGame";
     private const string LOBBY_SCENE = "Lobby";
-    private const int MAX_PLAYER_COUNT = 2;
+    private const int MAX_PLAYER_COUNT = 1;
 
     // Events
     public event Action OnStartedRunnerConnection;

@@ -2,6 +2,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using AutoSet.Utils;
 
 // Unity
 using UnityEngine;
@@ -13,8 +14,8 @@ using Fusion.Sockets;
 
 public class LocalInputPoller : NetworkBehaviour, INetworkRunnerCallbacks
 {
-    [SerializeField] private PlayerController playerController = null;
-    [SerializeField] private PlayerRig playerRig = null;
+    [SerializeField, AutoSet] private PlayerController playerController = null;
+    [SerializeField, AutoSet] private PlayerRig playerRig = null;
 
     /// <summary>
     /// Called when the object is spawned.
@@ -41,8 +42,9 @@ public class LocalInputPoller : NetworkBehaviour, INetworkRunnerCallbacks
             var networkInputData = playerController.GetPlayerNetworkInput();
             input.Set(networkInputData);
 
+            /*
             var networkRigData = playerRig.GetPlayerNetworkRig();
-            input.Set(networkRigData);
+            input.Set(networkRigData);*/
         }
     }
 

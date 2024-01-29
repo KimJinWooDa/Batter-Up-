@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bat : MonoBehaviour
 {
     [SerializeField] private float power = 1.5f;
-    [SerializeField, AutoSet] private Rigidbody rigidbody;
+    //[SerializeField, AutoSet] private Rigidbody rigidbody;
     
     private Vector3 previousPosition;
     private Vector3 currentPosition;

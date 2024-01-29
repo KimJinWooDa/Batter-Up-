@@ -1,6 +1,7 @@
 ﻿// System
 using System.Collections;
 using System.Collections.Generic;
+using AutoSet.Utils;
 
 // Unity
 using UnityEngine;
@@ -21,7 +22,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     private float vertical = 0f;
 
     // Cached variables
-    private NetworkCharacterController networkCharacterController = null;
+    [SerializeField, AutoSet] private NetworkCharacterController networkCharacterController = null;
 
     // Constants
     private const string HORIZONTAL = "Horizontal";
@@ -33,12 +34,15 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     /// </summary>
     public override void Spawned()
     {
-        // Cache
-        networkCharacterController = GetComponent<NetworkCharacterController>();
-
         // Set the local object
-        if (HasInputAuthority) localObject.SetActive(true);
-        else localObject.SetActive(false);
+        if (HasInputAuthority)
+        {
+            localObject.SetActive(true);
+        }
+        else
+        {
+            localObject.SetActive(false);
+        }
     }
 
     /// <summary>
@@ -95,7 +99,11 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         if(HasInputAuthority)
         {
             // Spawn the prefab
-            if (prefab != null) return Instantiate(prefab, Vector3.zero, Quaternion.identity, localObject.transform);
+            if (prefab != null)
+            {
+                return Instantiate(prefab, Vector3.zero, 
+                    Quaternion.identity, localObject.transform);
+            }
         }
 
         return null;
