@@ -37,16 +37,6 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     private const string HORIZONTAL = "Horizontal";
     private const string VERTICAL = "Vertical";
 
-
-    // Rig Data
-    private Vector3 headPosition = Vector3.zero;
-    private Quaternion headRotation = Quaternion.identity;
-    private Vector3 leftHandPosition = Vector3.zero;
-    private Quaternion leftHandRotation = Quaternion.identity;
-    private Vector3 rightHandPosition = Vector3.zero;
-    private Quaternion rightHandRotation = Quaternion.identity;
-
-
     /// <summary>
     /// Called when the object is spawned.
     /// </summary>
@@ -85,16 +75,6 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
             // Get normal input
             horizontal = Input.GetAxisRaw(HORIZONTAL);
             vertical = Input.GetAxisRaw(VERTICAL);
-
-            // Get the rig input
-            headPosition = playerRigMapper.RigHeadPosition;
-            headRotation = playerRigMapper.RigHeadRotation;
-
-            leftHandPosition = playerRigMapper.RigLeftHandPosition;
-            leftHandRotation = playerRigMapper.RigLeftHandRotation;
-
-            rightHandPosition = playerRigMapper.RigRightHandPosition;
-            rightHandRotation = playerRigMapper.RigRightHandRotation;
         }
     }
 
@@ -105,22 +85,24 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
          * the client does not have state authority or input authority
          * the requested type of input does not exist in the simulation
          */
-        if (Runner.TryGetInputForPlayer<NetworkInputData>(Object.InputAuthority, out var input))
+        if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
         {
-            // Update the character controller
-            networkCharacterController.Move(input.MovementsDirection * moveSpeed * Runner.DeltaTime);
+            if (Runner.TryGetInputForPlayer<NetworkInputData>(Object.InputAuthority, out var input))
+            {
+                // Update the character controller
+                networkCharacterController.Move(input.MovementsDirection * moveSpeed * Runner.DeltaTime);
 
-            // Update the model
-            if (modelHead == null || modelLeftHand == null || modelRightHand == null) return;
+                // Update the model
+                if (modelHead == null || modelLeftHand == null || modelRightHand == null) return;
 
-            //modelHead.position = rigData.HeadPosition;
-            modelHead.rotation = input.HeadRotation;
+                modelHead.rotation = playerRigMapper.RigHeadRotation * Quaternion.Euler(-90f, 0f, 0f);
 
-            modelLeftHand.position = input.LeftHandPosition;
-            modelLeftHand.rotation = input.LeftHandRotation;
+                modelLeftHand.position = playerRigMapper.RigLeftHandPosition;
+                modelLeftHand.rotation = playerRigMapper.RigLeftHandRotation;
 
-            modelRightHand.position = input.RightHandPosition;
-            modelRightHand.rotation = input.RightHandRotation;
+                modelRightHand.position = playerRigMapper.RigRightHandPosition;
+                modelRightHand.rotation = playerRigMapper.RigRightHandRotation;
+            }
         }
     }
 
@@ -138,12 +120,12 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         data.MovementsDirection.z = vertical;
 
         // Set rig data
-        data.HeadPosition = headPosition;
-        data.HeadRotation = headRotation;
-        data.LeftHandPosition = leftHandPosition;
-        data.LeftHandRotation = leftHandRotation;
-        data.RightHandPosition = rightHandPosition;
-        data.RightHandRotation = rightHandRotation;
+        //data.HeadPosition = headPosition;
+        data.HeadRotation = playerRigMapper.RigHeadRotation;
+        data.LeftHandPosition = playerRigMapper.RigLeftHandPosition;
+        data.LeftHandRotation = playerRigMapper.RigLeftHandRotation;
+        data.RightHandPosition = playerRigMapper.RigRightHandPosition;
+        data.RightHandRotation =  playerRigMapper.RigRightHandRotation;
 
         // Return the data
         return data;
