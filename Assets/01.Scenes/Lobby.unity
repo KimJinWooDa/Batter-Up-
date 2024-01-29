@@ -6728,6 +6728,11 @@ PrefabInstance:
       propertyPath: IsTest
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1202145235844766869, guid: bec130511824a1f4da2764d8d606bc51,
+        type: 3}
+      propertyPath: maxPlayerCount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3274937675791130170, guid: bec130511824a1f4da2764d8d606bc51,
         type: 3}
       propertyPath: m_Name

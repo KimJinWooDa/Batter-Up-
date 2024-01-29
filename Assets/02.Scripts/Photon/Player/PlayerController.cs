@@ -16,7 +16,9 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     [Header("Settings")]
     [SerializeField] private float moveSpeed = 6f;
     [SerializeField] private GameObject localObject = null;
-
+    public bool IsTest;
+    [SerializeField] private float rotationSpeed = 3f;
+    
     [Header("Prefab")]
     [SerializeField] private GameObject vrRigPrefab = null;
 
@@ -28,10 +30,12 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     // Physics
     private float horizontal = 0f;
     private float vertical = 0f;
-
+    private float rawHorizontalInput;
+    
     // Cached variables
     private NetworkCharacterController networkCharacterController = null;
     private PlayerRigMapper playerRigMapper = null;
+    private CharacterController characterController = null;
 
     // Constants
     private const string HORIZONTAL = "Horizontal";
@@ -58,6 +62,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
 
             // Cache the rig mapper
             playerRigMapper = rig.GetComponent<PlayerRigMapper>();
+            characterController = GetComponent<CharacterController>();
         }
         else localObject.SetActive(false);
     }
@@ -73,9 +78,27 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
         {
             // Get normal input
-            horizontal = Input.GetAxisRaw(HORIZONTAL);
-            vertical = Input.GetAxisRaw(VERTICAL);
+            if (IsTest)
+            {
+                horizontal = Input.GetAxisRaw(HORIZONTAL);
+                vertical = Input.GetAxisRaw(VERTICAL);
+            }
+            else
+            {
+                horizontal = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).x;
+                vertical = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y;
+            }
+            
         }
+    }
+
+    float SnapInput(float input, float threshold = 0.5f)
+    {
+        if (Mathf.Abs(input) > threshold)
+        {
+            return Mathf.Sign(input);
+        }
+        return 0f;
     }
 
     public override void FixedUpdateNetwork()
@@ -89,19 +112,47 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         {
             if (Runner.TryGetInputForPlayer<NetworkInputData>(Object.InputAuthority, out var input))
             {
-                // Update the character controller
-                networkCharacterController.Move(input.MovementsDirection * moveSpeed * Runner.DeltaTime);
+                //networkCharacterController.Move(input.MovementsDirection * moveSpeed * Runner.DeltaTime);
+                var worldDirection = playerRigMapper.CenterEye.TransformDirection(input.MovementsDirection);
+                worldDirection.y = 0f;
+               
+                
+                if (IsTest)
+                {
+                    if (Input.GetKey(KeyCode.K))
+                    {
+                        rawHorizontalInput = -1f;
+                    }
+                    else if(Input.GetKey(KeyCode.L))
+                    {
+                        rawHorizontalInput = 1f;
+                    }
+                    else
+                    {
+                        rawHorizontalInput = 0f;
+                    }
+                }
+                else
+                {
+                    rawHorizontalInput = OVRInput.Get(OVRInput.RawAxis2D.RThumbstick).x;
+                }
+                
+                float snappedHorizontalInput = SnapInput(rawHorizontalInput);
 
+                transform.Rotate(0, snappedHorizontalInput * 45f * Runner.DeltaTime * rotationSpeed, 0);
+                
+                characterController.Move(worldDirection * moveSpeed * Runner.DeltaTime);
+                
                 // Update the model
                 if (modelHead == null || modelLeftHand == null || modelRightHand == null) return;
 
-                modelHead.rotation = playerRigMapper.RigHeadRotation * Quaternion.Euler(-90f, 0f, 0f);
+                modelHead.rotation = input.HeadRotation * Quaternion.Euler(-90f, 0f, 0f);
 
-                modelLeftHand.position = playerRigMapper.RigLeftHandPosition;
-                modelLeftHand.rotation = playerRigMapper.RigLeftHandRotation;
+                modelLeftHand.position = input.LeftHandPosition;
+                modelLeftHand.rotation = input.LeftHandRotation;
 
-                modelRightHand.position = playerRigMapper.RigRightHandPosition;
-                modelRightHand.rotation = playerRigMapper.RigRightHandRotation;
+                modelRightHand.position = input.RightHandPosition;
+                modelRightHand.rotation = input.RightHandRotation;
             }
         }
     }

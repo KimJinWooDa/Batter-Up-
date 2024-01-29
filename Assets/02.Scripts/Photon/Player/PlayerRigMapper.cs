@@ -10,6 +10,7 @@ public class PlayerRigMapper : MonoBehaviour
     [SerializeField] private Transform rigRightHand = null;
 
     // Open variables
+    public Transform CenterEye => rigHead;
     public Vector3 RigHeadPosition => rigHead.position;
     public Quaternion RigHeadRotation => rigHead.rotation;
     public Vector3 RigLeftHandPosition => rigLeftHand.position;

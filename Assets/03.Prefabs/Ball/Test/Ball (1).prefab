@@ -163,8 +163,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb603ffd0e0ff444b89abd5c777c840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSource: {fileID: 0}
+  BallHitSoundClip: {fileID: 0}
+  ParticleSystem: {fileID: 0}
   HapticData: {fileID: 0}
-  SoundOfBall: Ball
+  explosionPower: 1.2
+  rigidBody: {fileID: 7069579440778182789}
 --- !u!114 &7912093039534979751
 MonoBehaviour:
   m_ObjectHideFlags: 0
