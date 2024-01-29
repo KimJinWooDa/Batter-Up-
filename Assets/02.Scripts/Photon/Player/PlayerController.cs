@@ -59,7 +59,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
         if (HasInputAuthority)
         {
             localObject.SetActive(true);
-            
+
             // Create the rig
             var rig = SpawnLocalObject(vrRigPrefab);
 
@@ -70,8 +70,6 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
             playerRigMapper = rig.GetComponent<PlayerRigMapper>();
         }
         else localObject.SetActive(false);
-
-        
     }
 
     /// <summary>
