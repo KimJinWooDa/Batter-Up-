@@ -14,7 +14,6 @@ using Fusion.Sockets;
 public class LocalInputPoller : NetworkBehaviour, INetworkRunnerCallbacks
 {
     [SerializeField] private PlayerController playerController = null;
-    [SerializeField] private PlayerRig playerRig = null;
 
     /// <summary>
     /// Called when the object is spawned.
@@ -40,9 +39,6 @@ public class LocalInputPoller : NetworkBehaviour, INetworkRunnerCallbacks
         {
             var networkInputData = playerController.GetPlayerNetworkInput();
             input.Set(networkInputData);
-
-            var networkRigData = playerRig.GetPlayerNetworkRig();
-            input.Set(networkRigData);
         }
     }
 

@@ -281,7 +281,6 @@ GameObject:
   - component: {fileID: 4002314297676010754}
   - component: {fileID: 7325936451566185559}
   - component: {fileID: 7366725307555591353}
-  - component: {fileID: 8890572335841621902}
   - component: {fileID: 5922447767144141761}
   m_Layer: 0
   m_Name: Player
@@ -353,7 +352,6 @@ MonoBehaviour:
   - {fileID: 4002314297676010754}
   - {fileID: 7325936451566185559}
   - {fileID: 7366725307555591353}
-  - {fileID: 8890572335841621902}
   - {fileID: 5922447767144141761}
   - {fileID: 710843533516076740}
   - {fileID: 3911586090007088475}
@@ -404,18 +402,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 6
   localObject: {fileID: 4196542744842929299}
---- !u!114 &8890572335841621902
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7289343105959119551}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a61c2a3cf544dc3418e462ccd49576d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   vrRigPrefab: {fileID: 1203937821653258349, guid: a85a85013bf3e4c4ab5b88836297d17c,
     type: 3}
   modelHead: {fileID: 4542673859521428240}
@@ -434,7 +420,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 7366725307555591353}
-  playerRig: {fileID: 8890572335841621902}
 --- !u!1 &8239712510521863504
 GameObject:
   m_ObjectHideFlags: 0
