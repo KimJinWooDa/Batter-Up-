@@ -79,7 +79,7 @@ namespace Fusion {
       var previousPos  = transform.position;
       var moveVelocity = Data.Velocity;
 
-      direction = direction.normalized;
+      /*direction = direction.normalized;
 
       if (Data.Grounded && moveVelocity.y < 0) {
         moveVelocity.y = 0f;
@@ -99,9 +99,9 @@ namespace Fusion {
       }
 
       moveVelocity.x = horizontalVel.x;
-      moveVelocity.z = horizontalVel.z;
+      moveVelocity.z = horizontalVel.z;*/
 
-      _controller.Move(moveVelocity * deltaTime);
+      _controller.Move(direction * deltaTime);
 
       Data.Velocity = (transform.position - previousPos) * Runner.TickRate;
       Data.Grounded = _controller.isGrounded;

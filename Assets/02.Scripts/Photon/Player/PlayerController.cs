@@ -1,6 +1,7 @@
 ﻿// System
 using System.Collections;
 using System.Collections.Generic;
+using AutoSet.Utils;
 
 // Unity
 using UnityEngine;
@@ -32,9 +33,9 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     private float rawHorizontalInput;
     
     // Cached variables
-    private NetworkCharacterController networkCharacterController = null;
+    [SerializeField, AutoSet] private NetworkCharacterController networkCharacterController = null;
     private PlayerRigMapper playerRigMapper = null;
-    private CharacterController characterController = null;
+    [SerializeField, AutoSet] private CharacterController characterController = null;
 
     // Constants
     private const string HORIZONTAL = "Horizontal";
@@ -45,9 +46,6 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     /// </summary>
     public override void Spawned()
     {
-        // Cache
-        //networkCharacterController = GetComponent<NetworkCharacterController>();
-
         // Set the local object
         if (HasInputAuthority)
         {
@@ -74,7 +72,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     public void BeforeUpdate()
     {
         // We are the local machine if this state is true
-        if (Runner.LocalPlayer.IsRealPlayer && HasInputAuthority)
+        if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
         {
             // Get normal input
             if (IsTest)
@@ -107,13 +105,11 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
          * the client does not have state authority or input authority
          * the requested type of input does not exist in the simulation
          */
-        if (Runner.LocalPlayer.IsRealPlayer && HasInputAuthority)
+        if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
         {
-         
             if (Runner.TryGetInputForPlayer<NetworkInputData>(Object.InputAuthority, out var input))
             {
                 var worldDirection = playerRigMapper.CenterEye.TransformDirection(input.MovementsDirection);
-                Debug.Log($"{input.MovementsDirection}");
                 worldDirection.y = 0f;
                 
                 if (IsTest)
@@ -138,9 +134,9 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
                 
                 float snappedHorizontalInput = SnapInput(rawHorizontalInput);
 
-                transform.Rotate(0, snappedHorizontalInput * 45f * Runner.DeltaTime * rotationSpeed, 0);
+                transform.Rotate(0, snappedHorizontalInput * 45f * Time.deltaTime * rotationSpeed, 0);
                 
-                characterController.Move(worldDirection * moveSpeed * Runner.DeltaTime);
+                networkCharacterController.Move(worldDirection * moveSpeed);
                 
                 // Update the model
                 if (modelHead == null || modelLeftHand == null || modelRightHand == null) return;
