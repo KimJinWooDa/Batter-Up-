@@ -174,6 +174,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 4690782462345063719}
+  - {fileID: 2036127553164582146}
 --- !u!114 &2036127553164582146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,4 +187,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2eb603ffd0e0ff444b89abd5c777c840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  AudioSource: {fileID: 0}
+  BallHitSoundClip: {fileID: 0}
+  ParticleSystem: {fileID: 0}
   HapticData: {fileID: 0}
+  impulsePower: 1.2
+  rigidBody: {fileID: 0}
+  networkObject: {fileID: 754156146844994321}

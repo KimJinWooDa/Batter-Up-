@@ -7,7 +7,6 @@ using UnityEngine;
 
 // Fusion
 using Fusion;
-using WebSocketSharp;
 
 
 [DisallowMultipleComponent]
@@ -47,7 +46,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     public override void Spawned()
     {
         // Cache
-        networkCharacterController = GetComponent<NetworkCharacterController>();
+        //networkCharacterController = GetComponent<NetworkCharacterController>();
 
         // Set the local object
         if (HasInputAuthority)
@@ -75,7 +74,7 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     public void BeforeUpdate()
     {
         // We are the local machine if this state is true
-        if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
+        if (Runner.LocalPlayer.IsRealPlayer && HasInputAuthority)
         {
             // Get normal input
             if (IsTest)
@@ -108,14 +107,14 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
          * the client does not have state authority or input authority
          * the requested type of input does not exist in the simulation
          */
-        if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
+        if (Runner.LocalPlayer.IsRealPlayer && HasInputAuthority)
         {
+         
             if (Runner.TryGetInputForPlayer<NetworkInputData>(Object.InputAuthority, out var input))
             {
-                //networkCharacterController.Move(input.MovementsDirection * moveSpeed * Runner.DeltaTime);
                 var worldDirection = playerRigMapper.CenterEye.TransformDirection(input.MovementsDirection);
+                Debug.Log($"{input.MovementsDirection}");
                 worldDirection.y = 0f;
-               
                 
                 if (IsTest)
                 {

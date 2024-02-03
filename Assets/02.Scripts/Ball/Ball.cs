@@ -1,7 +1,9 @@
+using System;
 using AutoSet.Utils;
+using Fusion;
 using UnityEngine;
 
-public class Ball : MonoBehaviour, IHittable
+public class Ball : NetworkBehaviour, IHittable
 {
     [Header("Audio")]
     public AudioSource AudioSource;
@@ -20,8 +22,8 @@ public class Ball : MonoBehaviour, IHittable
     [Header("Settings")]
     [SerializeField] private float impulsePower = 1.2f;
     [SerializeField, AutoSet] private Rigidbody rigidBody;
-
-
+    [SerializeField, AutoSet] private NetworkObject networkObject;
+    [SerializeField] private MeshRenderer meshRenderer;
     public void OnHit(Vector3 contactPoint, Bat bat)
     {
         if (AudioSource != null)
@@ -58,6 +60,16 @@ public class Ball : MonoBehaviour, IHittable
 
             Vector3 torqueDirection = Vector3.Cross(forceDirection, Vector3.up);
             a.AddTorque(torqueDirection * rigidBody.velocity.magnitude * impulsePower, ForceMode.Impulse);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Zone"))
+        {
+            Debug.Log("나감");
+            //Despawned(networkObject.Runner, true);
+            meshRenderer.enabled = false;
         }
     }
 }

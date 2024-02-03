@@ -156,12 +156,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   AudioSource: {fileID: 0}
-  BallHitSoundClip: {fileID: 8300000, guid: b722d1df7a7b8974fb138b4deeaad37e, type: 3}
+  BallHitSoundClip: {fileID: 8300000, guid: 94f4b69fa129bf94a95fde230d28d27b, type: 3}
   ParticleSystem: {fileID: 2796496369746990028, guid: 8e269f21b17d04799a38d8e574ff26b8,
     type: 3}
   HapticData: {fileID: 8189597239045951004}
   impulsePower: 1.2
   rigidBody: {fileID: 8188732761090867661}
+  networkObject: {fileID: 1972019436207391267}
+  meshRenderer: {fileID: 4773869295215457984}
 --- !u!114 &8189597239045951004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,7 +177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_InteractableType: 0
-  m_HapticClip: {fileID: 2460798210113038985, guid: b71edb02c7ed7174d8914ea0400d49dd,
+  m_HapticClip: {fileID: 2460798210113038985, guid: 7bbb07df38ba88c40bf517af5d628cf9,
     type: 3}
   m_Amplitude: 1
   m_FrequencyShift: 1
@@ -216,6 +218,7 @@ MonoBehaviour:
   Flags: 262145
   NestedObjects: []
   NetworkedBehaviours:
+  - {fileID: 1750661818971021873}
   - {fileID: 3069393122403866944}
 --- !u!82 &8706239402583267371
 AudioSource:
@@ -226,7 +229,8 @@ AudioSource:
   m_GameObject: {fileID: 1446398716890648245}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: -7625834118873533731, guid: 503826a2ee1c76d41b2580aba9f9fec4,
+    type: 2}
   m_audioClip: {fileID: 8300000, guid: b722d1df7a7b8974fb138b4deeaad37e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
