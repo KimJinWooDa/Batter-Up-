@@ -44,16 +44,6 @@ namespace UnityToolbarExtender.Examples
         {
             GUILayout.FlexibleSpace();
 
-            if (GUILayout.Button(new GUIContent("StartUp", "StartUp Scene")))
-            {
-                SceneHelper.OpenScene("StartUp");
-            }
-
-            if (GUILayout.Button(new GUIContent("MainMenu", "MainMenu Scene")))
-            {
-                SceneHelper.OpenScene("MainMenu");
-            }
-
             if (GUILayout.Button(new GUIContent("Lobby", "Lobby Scene")))
             {
                 SceneHelper.OpenScene("Lobby");

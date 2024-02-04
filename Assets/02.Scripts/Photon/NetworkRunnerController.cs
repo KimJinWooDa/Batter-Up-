@@ -12,22 +12,26 @@ using UnityEngine.SceneManagement;
 // Fusion
 using Fusion;
 using Fusion.Sockets;
+using Sirenix.OdinInspector;
 
 
 [DisallowMultipleComponent]
 public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
 {
+    [Title("Prefabs")]
     [SerializeField] private NetworkRunner networkRunnerPrefab;
     [SerializeField] private NetworkPrefabRef networkDataHandlerManagerPrefab = NetworkPrefabRef.Empty;
 
+    [Title("Settings")]
+    [SerializeField, Range(1, 10)] private int maxPlayerCount = 2;
+    [SerializeField] private string gameSceneName = "MainGame";
+
     // Cached references
-    public NetworkDataHandlerManager NetworkDataHandlerManager = null;
+    public NetworkDataHandlerManager NetworkDataHandlerManager { get; set; } = null;
     private NetworkRunner networkRunnerInstance;
 
     // Constants
-    private const string GAME_SCENE_NAME = "MainGame";
     private const string LOBBY_SCENE = "Lobby";
-    private const int MAX_PLAYER_COUNT = 2;
 
     // Events
     public event Action OnStartedRunnerConnection;
@@ -86,7 +90,7 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
         {
             GameMode = mode,
             SessionName = roomName,
-            PlayerCount = MAX_PLAYER_COUNT,
+            PlayerCount = maxPlayerCount,
             SceneManager = networkRunnerInstance.GetComponent<INetworkSceneManager>()
         };
 
@@ -114,9 +118,11 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
     private IEnumerator RestructureRoutine()
     {
         // Skip restructure routine for just now
-        if (networkRunnerInstance.IsSceneAuthority) networkRunnerInstance.LoadScene(GAME_SCENE_NAME);
+        if (networkRunnerInstance.IsSceneAuthority) networkRunnerInstance.LoadScene(gameSceneName);
 
         yield break;
+
+#pragma warning disable 0162
 
         print("Restructure Routine started");
 
@@ -133,6 +139,8 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
         }
 
         yield break;
+
+#pragma warning restore 0162
     }
 
     #region Network Runner Callbacks
@@ -171,7 +179,7 @@ public class NetworkRunnerController : MonoBehaviour, INetworkRunnerCallbacks
         }
 
         // Check if room is full
-        if (runner.ActivePlayers.Count() == MAX_PLAYER_COUNT)
+        if (runner.ActivePlayers.Count() == maxPlayerCount)
         {
             // Start restructure routine
             if (restructureRoutine != null)

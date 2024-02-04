@@ -74,12 +74,12 @@ namespace Fusion {
       }
     }
 
-    public void Move(Vector3 direction) {
+    public void Move(Vector3 direction, float snappedHorizontalInput) {
       var deltaTime    = Runner.DeltaTime;
       var previousPos  = transform.position;
       var moveVelocity = Data.Velocity;
 
-      direction = direction.normalized;
+      /*direction = direction.normalized;
 
       if (Data.Grounded && moveVelocity.y < 0) {
         moveVelocity.y = 0f;
@@ -99,12 +99,12 @@ namespace Fusion {
       }
 
       moveVelocity.x = horizontalVel.x;
-      moveVelocity.z = horizontalVel.z;
-
-      _controller.Move(moveVelocity * deltaTime);
+      moveVelocity.z = horizontalVel.z;*/
+      transform.Rotate(0, snappedHorizontalInput * 45f * Runner.DeltaTime * rotationSpeed, 0);
+      _controller.Move(transform.TransformDirection(direction) * Runner.DeltaTime);
 
       Data.Velocity = (transform.position - previousPos) * Runner.TickRate;
-      Data.Grounded = _controller.isGrounded;
+      //Data.Grounded = _controller.isGrounded;
     }
     
     public override void Spawned() {

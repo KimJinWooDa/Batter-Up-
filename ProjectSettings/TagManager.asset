@@ -8,6 +8,7 @@ TagManager:
   - RoomLight
   - Bat
   - Ball
+  - Zone
   layers:
   - Default
   - TransparentFX

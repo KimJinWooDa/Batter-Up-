@@ -187,7 +187,7 @@ public class SoundManager : MonoBehaviourSingleton<SoundManager>
         SaveVolume();
     }
 
-    private void OnDestroy()
+    protected override void OnDestroy()
     {
         SaveVolume();
     }

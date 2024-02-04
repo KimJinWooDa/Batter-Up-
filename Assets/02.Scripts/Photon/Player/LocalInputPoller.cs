@@ -13,11 +13,14 @@ using Fusion.Sockets;
 
 public class LocalInputPoller : NetworkBehaviour, INetworkRunnerCallbacks
 {
-    [SerializeField] private PlayerController player = null;
+    [SerializeField] private PlayerController playerController = null;
 
+    /// <summary>
+    /// Called when the object is spawned.
+    /// </summary>
     public override void Spawned()
     {
-        if (Runner.LocalPlayer == Object.InputAuthority)
+        if (Runner.LocalPlayer.IsRealPlayer && HasInputAuthority)
         {
             Runner.AddCallbacks(this);
         }
@@ -34,8 +37,8 @@ public class LocalInputPoller : NetworkBehaviour, INetworkRunnerCallbacks
     {
         if (runner != null && runner.IsRunning)
         {
-            var data = player.GetPlayerNetworkInput();
-            input.Set(data);
+            var networkInputData = playerController.GetPlayerNetworkInput();
+            input.Set(networkInputData);
         }
     }
 

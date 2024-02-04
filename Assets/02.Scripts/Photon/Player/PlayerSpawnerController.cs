@@ -7,6 +7,7 @@ using UnityEngine;
 
 // Fusion
 using Fusion;
+using UnityEngine.Serialization;
 
 
 [DisallowMultipleComponent]
@@ -20,7 +21,7 @@ public class PlayerSpawnerController : NetworkBehaviour, IPlayerJoined, IPlayerL
 
     // Database
     private Dictionary<PlayerRef, NetworkObject> spawnedPlayers = new Dictionary<PlayerRef, NetworkObject>();
-
+    
 
     public override void Spawned()
     {

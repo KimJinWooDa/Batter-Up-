@@ -26,15 +26,24 @@ public class HapticEventHandler : MonoBehaviour
 
     private void Start()
     {
-        m_PokeInteractor.WhenInteractableSelected.Action += OnPokeInteractableSelected;
-        m_GrabInteractor.WhenInteractableSelected.Action += OnGrabInteractableSelected;
-        m_RayInteractor.WhenInteractableSelected.Action += OnRayInteractableSelected;
+        if (m_GrabInteractor != null)
+        {
+            m_GrabInteractor.WhenInteractableSelected.Action += OnGrabInteractableSelected;
+            m_GrabInteractor.WhenInteractableUnselected.Action += OnGrabInteractableUnSelected;
+        }
 
-        m_PokeInteractor.WhenInteractableUnselected.Action += OnPokeInteractableUnSelected;
-        m_GrabInteractor.WhenInteractableUnselected.Action += OnGrabInteractableUnSelected;
-        m_RayInteractor.WhenInteractableUnselected.Action += OnRayInteractableUnSelected;
+        if (m_PokeInteractor != null)
+        {
+            m_PokeInteractor.WhenInteractableSelected.Action += OnPokeInteractableSelected;
+            m_PokeInteractor.WhenInteractableUnselected.Action += OnPokeInteractableUnSelected;
+        }
 
-        m_RayInteractor.WhenInteractableSet.Action += OnRayInteractableHover;
+        if (m_RayInteractor)
+        {
+            m_RayInteractor.WhenInteractableSelected.Action += OnRayInteractableSelected;
+            m_RayInteractor.WhenInteractableUnselected.Action += OnRayInteractableUnSelected;
+            m_RayInteractor.WhenInteractableSet.Action += OnRayInteractableHover;
+        }
     }
 
     private void OnPokeInteractableSelected(PokeInteractable interactable)
@@ -120,14 +129,23 @@ public class HapticEventHandler : MonoBehaviour
     {
         m_TargetHapticPlayer?.Dispose();
 
-        m_PokeInteractor.WhenInteractableSelected.Action -= OnPokeInteractableSelected;
-        m_GrabInteractor.WhenInteractableSelected.Action -= OnGrabInteractableSelected;
-        m_RayInteractor.WhenInteractableSelected.Action -= OnRayInteractableSelected;
+        if (m_GrabInteractor != null)
+        {
+            m_GrabInteractor.WhenInteractableSelected.Action -= OnGrabInteractableSelected;
+            m_GrabInteractor.WhenInteractableUnselected.Action -= OnGrabInteractableUnSelected;
+        }
 
-        m_PokeInteractor.WhenInteractableUnselected.Action -= OnPokeInteractableUnSelected;
-        m_GrabInteractor.WhenInteractableUnselected.Action -= OnGrabInteractableUnSelected;
-        m_RayInteractor.WhenInteractableUnselected.Action -= OnRayInteractableUnSelected;
+        if (m_PokeInteractor != null)
+        {
+            m_PokeInteractor.WhenInteractableSelected.Action -= OnPokeInteractableSelected;
+            m_PokeInteractor.WhenInteractableUnselected.Action -= OnPokeInteractableUnSelected;
+        }
 
-        m_RayInteractor.WhenInteractableSet.Action -= OnRayInteractableHover;
+        if (m_RayInteractor)
+        {
+            m_RayInteractor.WhenInteractableSelected.Action -= OnRayInteractableSelected;
+            m_RayInteractor.WhenInteractableUnselected.Action -= OnRayInteractableUnSelected;
+            m_RayInteractor.WhenInteractableSet.Action -= OnRayInteractableHover;
+        }
     }
 }

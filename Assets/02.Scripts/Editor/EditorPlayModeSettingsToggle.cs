@@ -8,10 +8,13 @@ public class EditorPlayModeSettingsToggle
     private static bool enterPlayModeOptionsEnabled;
     private static EnterPlayModeOptions enterPlayModeOptions;
 
+    private const string EnterPlayModeOptionsEnabledPrefKey = "EnterPlayModeOptionsEnabled";
+    private const string EnterPlayModeOptionsPrefKey = "EnterPlayModeOptions";
+
     static EditorPlayModeSettingsToggle()
     {
-        enterPlayModeOptionsEnabled = EditorSettings.enterPlayModeOptionsEnabled;
-        enterPlayModeOptions = EditorSettings.enterPlayModeOptions;
+        enterPlayModeOptionsEnabled = EditorPrefs.GetBool(EnterPlayModeOptionsEnabledPrefKey, EditorSettings.enterPlayModeOptionsEnabled);
+        enterPlayModeOptions = (EnterPlayModeOptions)EditorPrefs.GetInt(EnterPlayModeOptionsPrefKey, (int)EditorSettings.enterPlayModeOptions);
 
         ToolbarExtender.LeftToolbarGUI.Add(ShowToggle);
     }
@@ -28,14 +31,16 @@ public class EditorPlayModeSettingsToggle
         toggleStyle.focused.textColor = toggleStyle.onFocused.textColor = enterPlayModeOptionsEnabled ? Color.red : Color.green;
 
         enterPlayModeOptionsEnabled = GUILayout.Toggle(enterPlayModeOptionsEnabled, "Play Mode Options Enable", toggleStyle);
-        //enterPlayModeOptions = (EnterPlayModeOptions)EditorGUILayout.EnumPopup(enterPlayModeOptions);
         
         GUILayout.EndHorizontal();
         
         if (EditorGUI.EndChangeCheck())
         {
             EditorSettings.enterPlayModeOptionsEnabled = enterPlayModeOptionsEnabled;
+            EditorPrefs.SetBool(EnterPlayModeOptionsEnabledPrefKey, enterPlayModeOptionsEnabled);
+
             EditorSettings.enterPlayModeOptions = enterPlayModeOptions;
+            EditorPrefs.SetInt(EnterPlayModeOptionsPrefKey, (int)enterPlayModeOptions);
         }
     }
 }
