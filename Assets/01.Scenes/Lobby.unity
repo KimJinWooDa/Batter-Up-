@@ -6733,6 +6733,16 @@ PrefabInstance:
       propertyPath: maxPlayerCount
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1202145235844766869, guid: bec130511824a1f4da2764d8d606bc51,
+        type: 3}
+      propertyPath: networkDataHandlerManagerPrefab.RawGuidValue.Array.data[0]
+      value: 1441964205527698169
+      objectReference: {fileID: 0}
+    - target: {fileID: 1202145235844766869, guid: bec130511824a1f4da2764d8d606bc51,
+        type: 3}
+      propertyPath: networkDataHandlerManagerPrefab.RawGuidValue.Array.data[1]
+      value: -3881852393206402776
+      objectReference: {fileID: 0}
     - target: {fileID: 3274937675791130170, guid: bec130511824a1f4da2764d8d606bc51,
         type: 3}
       propertyPath: m_Name

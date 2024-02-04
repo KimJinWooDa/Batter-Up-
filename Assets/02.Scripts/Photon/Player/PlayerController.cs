@@ -9,6 +9,8 @@ using UnityEngine;
 // Fusion
 using Fusion;
 
+// LiNEARJUN
+using NetworkCharacterController = LiNEARJUN.Network.NetworkCharacterController;
 
 [DisallowMultipleComponent]
 public class PlayerController : NetworkBehaviour, IBeforeUpdate
@@ -33,9 +35,8 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     private float rawHorizontalInput;
     
     // Cached variables
-    [SerializeField, AutoSet] private NetworkCharacterController networkCharacterController = null;
+    [SerializeField] private NetworkCharacterController networkCharacterController = null;
     private PlayerRigMapper playerRigMapper = null;
-    [SerializeField, AutoSet] private CharacterController characterController = null;
 
     // Constants
     private const string HORIZONTAL = "Horizontal";
@@ -59,7 +60,6 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
 
             // Cache the rig mapper
             playerRigMapper = rig.GetComponent<PlayerRigMapper>();
-            characterController = GetComponent<CharacterController>();
         }
         else localObject.SetActive(false);
     }
@@ -71,22 +71,36 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     /// </summary>
     public void BeforeUpdate()
     {
-        // We are the local machine if this state is true
-        if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
+        // Get normal input
+        if (Runner.LocalPlayer.IsRealPlayer != Object.HasInputAuthority) return;
+        
+        if (IsTest)
         {
-            // Get normal input
-            if (IsTest)
+            horizontal = Input.GetAxisRaw(HORIZONTAL);
+            vertical = Input.GetAxisRaw(VERTICAL);
+
+            if (Input.GetKey(KeyCode.K))
             {
-                horizontal = Input.GetAxisRaw(HORIZONTAL);
-                vertical = Input.GetAxisRaw(VERTICAL);
+                rawHorizontalInput = -1f;
+            }
+            else if (Input.GetKey(KeyCode.L))
+            {
+                rawHorizontalInput = 1f;
             }
             else
             {
-                horizontal = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).x;
-                vertical = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y;
+                rawHorizontalInput = 0f;
             }
-            
         }
+        else
+        {
+            horizontal = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).x;
+            vertical = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick).y;
+
+            rawHorizontalInput = OVRInput.Get(OVRInput.RawAxis2D.RThumbstick).x;
+        }
+
+
     }
 
     float SnapInput(float input, float threshold = 0.5f)
@@ -101,54 +115,33 @@ public class PlayerController : NetworkBehaviour, IBeforeUpdate
     public override void FixedUpdateNetwork()
     {
         /*
-         * will return false if : 
+         * will return false if :
          * the client does not have state authority or input authority
          * the requested type of input does not exist in the simulation
          */
-        if (Runner.LocalPlayer.IsRealPlayer == Object.HasInputAuthority)
+        
+        if (Runner.TryGetInputForPlayer<NetworkInputData>(Object.InputAuthority, out var input))
         {
-            if (Runner.TryGetInputForPlayer<NetworkInputData>(Object.InputAuthority, out var input))
-            {
-                var worldDirection = playerRigMapper.CenterEye.TransformDirection(input.MovementsDirection);
-                worldDirection.y = 0f;
-                
-                if (IsTest)
-                {
-                    if (Input.GetKey(KeyCode.K))
-                    {
-                        rawHorizontalInput = -1f;
-                    }
-                    else if(Input.GetKey(KeyCode.L))
-                    {
-                        rawHorizontalInput = 1f;
-                    }
-                    else
-                    {
-                        rawHorizontalInput = 0f;
-                    }
-                }
-                else
-                {
-                    rawHorizontalInput = OVRInput.Get(OVRInput.RawAxis2D.RThumbstick).x;
-                }
-                
-                float snappedHorizontalInput = SnapInput(rawHorizontalInput);
+            //var worldDirection = playerRigMapper.CenterEye.TransformDirection(input.MovementsDirection);
+            //worldDirection.y = 0f;
+            float snappedHorizontalInput = SnapInput(rawHorizontalInput);
+            var yLerp = Mathf.Lerp(transform.rotation.eulerAngles.y, transform.rotation.eulerAngles.y + snappedHorizontalInput * 45f, Runner.DeltaTime * rotationSpeed);
+            var rotation = Quaternion.Euler(0, yLerp, 0);
 
-                transform.Rotate(0, snappedHorizontalInput * 45f * Time.deltaTime * rotationSpeed, 0);
-                
-                networkCharacterController.Move(worldDirection * moveSpeed);
-                
-                // Update the model
-                if (modelHead == null || modelLeftHand == null || modelRightHand == null) return;
+            networkCharacterController.Move(input.MovementsDirection * moveSpeed, rotation);
 
-                modelHead.rotation = input.HeadRotation * Quaternion.Euler(-90f, 0f, 0f);
+            //transform.Rotate(0, snappedHorizontalInput * 45f * Time.deltaTime * rotationSpeed, 0);
 
-                modelLeftHand.position = input.LeftHandPosition;
-                modelLeftHand.rotation = input.LeftHandRotation;
+            // Update the model
+            if (modelHead == null || modelLeftHand == null || modelRightHand == null) return;
 
-                modelRightHand.position = input.RightHandPosition;
-                modelRightHand.rotation = input.RightHandRotation;
-            }
+            modelHead.rotation = input.HeadRotation * Quaternion.Euler(-90f, 0f, 0f);
+
+            modelLeftHand.position = input.LeftHandPosition;
+            modelLeftHand.rotation = input.LeftHandRotation;
+
+            modelRightHand.position = input.RightHandPosition;
+            modelRightHand.rotation = input.RightHandRotation;
         }
     }
 

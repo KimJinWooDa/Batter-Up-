@@ -1,7 +1,8 @@
 using AutoSet.Utils;
+using Fusion;
 using Oculus.Haptics;
 using UnityEngine;
-public class Bat : MonoBehaviour
+public class Bat : NetworkBehaviour
 {
     [SerializeField, AutoSetFromParent] private Player player;
     [SerializeField] private float power = 1.5f;
@@ -76,6 +77,7 @@ public class Bat : MonoBehaviour
         }
     }
     
+    private Rigidbody otherRigidbody = null;
     private void OnCollisionEnter(Collision other)
     {
         //if(!canSwing) return;
@@ -84,19 +86,29 @@ public class Bat : MonoBehaviour
         //if (!player.IsMyTurn) return;
         if (other.gameObject.TryGetComponent<IHittable>(out var o))
         {
-            Rigidbody rigidBody = other.rigidbody;
+            otherRigidbody = other.rigidbody;
             var contactPoint = other.contacts[0].point;
             
-            Vector3 forceDirection = (rigidBody.transform.position - contactPoint).normalized;
-            rigidBody.AddForce(forceDirection * velocity * power, ForceMode.Impulse);
-            
+            Vector3 forceDirection = (otherRigidbody.transform.position - contactPoint).normalized;
+            //rigidBody.AddForce(forceDirection * velocity * power, ForceMode.Impulse);
+            RpcAddForceToBall(forceDirection * velocity * power);
+
             o.OnHit(contactPoint, this);
             PlayHaptic();
             
             canSwing = false;
         }
     }
-
+    
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    private void RpcAddForceToBall(Vector3 force)
+    {
+        if(otherRigidbody != null)
+        {
+            otherRigidbody.AddForce(force, ForceMode.Impulse);
+            otherRigidbody = null;
+        }
+    }
 
     private void PlayHaptic()
     {

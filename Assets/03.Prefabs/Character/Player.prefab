@@ -4874,7 +4874,7 @@ GameObject:
   - component: {fileID: 4542673859521428240}
   - component: {fileID: 4806845435689392660}
   - component: {fileID: 1443986186498663971}
-  - component: {fileID: 3430524153176483672}
+  - component: {fileID: 1779735135232202659}
   m_Layer: 0
   m_Name: Head
   m_TagString: Untagged
@@ -4947,7 +4947,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &3430524153176483672
+--- !u!114 &1779735135232202659
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5388,7 +5388,6 @@ GameObject:
   - component: {fileID: 2378262575915322567}
   - component: {fileID: 2508104563574224176}
   - component: {fileID: 5225047013711055536}
-  - component: {fileID: 355850113138018129}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -5461,27 +5460,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &355850113138018129
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7120908363856090603}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &7289343105959119551
 GameObject:
   m_ObjectHideFlags: 0
@@ -5496,10 +5474,10 @@ GameObject:
   - component: {fileID: 7325936451566185559}
   - component: {fileID: 7366725307555591353}
   - component: {fileID: 5922447767144141761}
-  - component: {fileID: 5720652698832460681}
+  - component: {fileID: 6473510568128980374}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5568,11 +5546,11 @@ MonoBehaviour:
   - {fileID: 7325936451566185559}
   - {fileID: 7366725307555591353}
   - {fileID: 5922447767144141761}
-  - {fileID: 5720652698832460681}
-  - {fileID: 3430524153176483672}
+  - {fileID: 6473510568128980374}
+  - {fileID: 1779735135232202659}
   - {fileID: 3911586090007088475}
-  - {fileID: 94748238651838406}
-  - {fileID: 1250593091432684318}
+  - {fileID: 6864964815060895742}
+  - {fileID: 207924731010276480}
 --- !u!114 &7325936451566185559
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5607,8 +5585,7 @@ MonoBehaviour:
   modelHead: {fileID: 4542673859521428240}
   modelLeftHand: {fileID: 4027840345834885728}
   modelRightHand: {fileID: 7717475709795696878}
-  networkCharacterController: {fileID: 5720652698832460681}
-  characterController: {fileID: 3327221610740438335}
+  networkCharacterController: {fileID: 6473510568128980374}
 --- !u!114 &5922447767144141761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5622,7 +5599,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerController: {fileID: 7366725307555591353}
---- !u!114 &5720652698832460681
+--- !u!114 &6473510568128980374
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5631,7 +5608,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7289343105959119551}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 378411a89480da345945c2f888327a2d, type: 3}
+  m_Script: {fileID: 11500000, guid: 427f8c1eeb5f5b14ba5c867bce4a0737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gravity: -20
@@ -5695,6 +5672,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 2721827082580417555}
+  - {fileID: 8751704582402775098}
 --- !u!114 &2721827082580417555
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5947,7 +5925,6 @@ GameObject:
   - component: {fileID: 8143558617602123093}
   - component: {fileID: 4682458823444927335}
   - component: {fileID: 5935805042741408872}
-  - component: {fileID: 3425520780591006909}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -6020,27 +5997,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &3425520780591006909
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8445538011021354400}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3490142416378590603
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6130,7 +6086,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc9a5045ee4194f81ee2f1756ba68f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 94748238651838406}
+      addedObject: {fileID: 6864964815060895742}
   m_SourcePrefab: {fileID: 100100000, guid: 2afc9a5045ee4194f81ee2f1756ba68f, type: 3}
 --- !u!4 &4027840345834885728 stripped
 Transform:
@@ -6144,7 +6100,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3490142416378590603}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &94748238651838406
+--- !u!114 &6864964815060895742
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -6258,7 +6214,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 2afc9a5045ee4194f81ee2f1756ba68f,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1250593091432684318}
+      addedObject: {fileID: 207924731010276480}
   m_SourcePrefab: {fileID: 100100000, guid: 2afc9a5045ee4194f81ee2f1756ba68f, type: 3}
 --- !u!1 &6940658253305240148 stripped
 GameObject:
@@ -6266,7 +6222,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7823669792864823045}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1250593091432684318
+--- !u!114 &207924731010276480
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

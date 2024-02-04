@@ -1128,6 +1128,7 @@ MonoBehaviour:
   NestedObjects: []
   NetworkedBehaviours:
   - {fileID: 7434572191070188108}
+  - {fileID: 4295725658270905957}
 --- !u!114 &7434572191070188108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1226,7 +1227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54d3863fa4a573343a495820544e65b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   power: 1.5
+  swingCooldown: 2
+  HandType: 0
+  AudioSource: {fileID: 0}
+  checkVelocity: 5
 --- !u!114 &4719284132662290841
 MonoBehaviour:
   m_ObjectHideFlags: 0

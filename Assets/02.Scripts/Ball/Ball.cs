@@ -24,6 +24,9 @@ public class Ball : NetworkBehaviour, IHittable
     [SerializeField, AutoSet] private Rigidbody rigidBody;
     [SerializeField, AutoSet] private NetworkObject networkObject;
     [SerializeField] private MeshRenderer meshRenderer;
+    
+    private Rigidbody otherRigidBody;
+    
     public void OnHit(Vector3 contactPoint, Bat bat)
     {
         if (AudioSource != null)
@@ -46,20 +49,29 @@ public class Ball : NetworkBehaviour, IHittable
        // SoundManager.Instance.PlaySound(soundName: SoundOfBall, point, volume);
     }
     
+    [Rpc(RpcSources.All, RpcTargets.All)]
+    private void RpcApplyForceAndTorque(Vector3 force, Vector3 torque)
+    {
+        if (otherRigidBody != null)
+        {
+            otherRigidBody.AddForce(force, ForceMode.Impulse);
+            otherRigidBody.AddTorque(torque, ForceMode.Impulse);
+            otherRigidBody = null;
+        }
+    }
+    
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Ball"))
         {
             Vector3 pointOfImpact = other.contacts[0].point;
-
             Vector3 forceDirection = other.gameObject.transform.position - pointOfImpact;
             forceDirection.Normalize();
-            
-            var a = other.gameObject.GetComponent<Rigidbody>();
-            a.AddForce(forceDirection * rigidBody.velocity.magnitude * impulsePower, ForceMode.Impulse);
-
+            otherRigidBody = other.gameObject.GetComponent<Rigidbody>();
             Vector3 torqueDirection = Vector3.Cross(forceDirection, Vector3.up);
-            a.AddTorque(torqueDirection * rigidBody.velocity.magnitude * impulsePower, ForceMode.Impulse);
+
+            RpcApplyForceAndTorque(forceDirection * rigidBody.velocity.magnitude * impulsePower, 
+                torqueDirection * rigidBody.velocity.magnitude * impulsePower);
         }
     }
 
@@ -67,7 +79,6 @@ public class Ball : NetworkBehaviour, IHittable
     {
         if (other.CompareTag("Zone"))
         {
-            Debug.Log("나감");
             //Despawned(networkObject.Runner, true);
             meshRenderer.enabled = false;
         }
